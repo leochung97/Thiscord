@@ -1,14 +1,18 @@
 # Thiscord
 
-**[Live Demo](#)**
+**[Live Thiscord Demo](#)**
 
 ## Table of Contents
-**[Background](#Background)**<br>
-**[Features](#Features)**<br>
-**[Technologies](#Technologies)**<br>
+- **[Background](#Background)**<br>
+- **[Features](#Features)**<br>
+- **[Technologies](#Technologies)**<br>
+- **[Wireframe](#Wireframe)**<br>
+- **[UML Diagram](#uml-diagram)**<br>
+
 
 ## Background
-Thiscord is a fullstack live chatting and messaging application designed to resemble Discord, the popular VoIP and instant messaging social platform. The name is intended to be a reference to JavaScript's **[this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)** object.
+Thiscord is a fullstack live chatting and messaging application designed to resemble Discord, the popular VoIP and instant messaging social platform. 
+The name is intended to be a reference to JavaScript's **[this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)** object.
 
 ## Features
 
@@ -25,3 +29,7 @@ To be updated.
 **Frontend:**
 - **React-Redux**: Frontend and State Management
 - **CSS**: Styling
+
+## Wireframe
+
+## UML Diagram
