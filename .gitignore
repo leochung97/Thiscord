@@ -27,7 +27,6 @@
 /config/master.key
 
 # Additional Ignores
-node_modules/
 bundle.js
 bundle.js.map
 .byebug_history
