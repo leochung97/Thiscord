@@ -1,15 +1,16 @@
 import React from "react";
 
 export default class SessionForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       username: '',
       email: '',
       password: ''
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginForm = this.loginForm.bind(this);
+    this.signupForm = this.signupForm.bind(this);
   }
   
   handleInput(field){
@@ -27,10 +28,10 @@ export default class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <p>
-          Need an account? <button onClick={this.registerForm}>Register</button>
+          Need an account? <button onClick={this.signupForm}>Register</button>
         </p>
       )
-    } else if (this.props.formType === "register") {
+    } else if (this.props.formType === "signup") {
       return (
         <p>
           <button onClick={this.loginForm}>Already have an account?</button>
@@ -39,6 +40,7 @@ export default class SessionForm extends React.Component {
     }
   }
 
+  // SESSION FORM MESSAGE
   renderMessage() {
     if (this.props.formType === "login") {
       return (
@@ -56,14 +58,15 @@ export default class SessionForm extends React.Component {
     }
   }
   
-  registerForm() {
+  loginForm() {
     setTimeout(() => { this.props.history.push("/login")}, 50);
   }
 
-  loginForm() {
+  signupForm() {
     setTimeout(() => { this.props.history.push("/signup") }, 50);
   }
   
+  // ERRORS HANDLING
   renderErrors() {
     return (
       <ul className="session-errors'">
@@ -80,25 +83,19 @@ export default class SessionForm extends React.Component {
 
   render(){
     return(
-      <div className="session-form">
-        <h1>CREATE AN ACCOUNT</h1>
-        <form>
-          <label>
-            EMAIL
-            <input type="text" value={this.state.email} onChange={this.handleInput('email')}/>
-          </label>
-
-          <label>
-            Username
-            <input type="text" value={this.state.username} onChange={this.handleInput('username')}/>
-          </label>
-          
-          <label>
-            Password
-            <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
-          </label>
-
-          <button type="submit" onClick={this.handleSubmit}>Sign Up!</button>
+      <div className="session-page-wrapper">
+        <form onSubmit={this.handleSubmit}>
+          {this.renderMessage()}
+          {this.renderErrors()}
+          {this.props.formType === "login" ? 
+            <div className="session-login-form">
+              TESTING LOGIN
+            </div>
+            : 
+            <div className="session-signup-form">
+              TESTING SIGNUP
+            </div>
+          }
         </form>
       </div>
     )
