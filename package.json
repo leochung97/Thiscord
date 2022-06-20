@@ -19,6 +19,11 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "watch": "webpack -w --mode=development"
+    "watch": "webpack -w --mode=development",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "16.15.0",
+    "npm": "8.5.5"
   }
 }
