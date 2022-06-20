@@ -7,14 +7,14 @@ import SplashContainer from "./splash/splash_container";
 import LoginContainer from "./session/login_form_container"
 
 const App = () => (
-  <div>
-    <Switch>
-      <AuthRoute path="/signup" element={<SignupContainer/>} />
-      <AuthRoute path="/login" element={<LoginContainer />} />
+  <>
+    <Routes>
+      <Route exact path="/signup" element={<SignupContainer/>} />
+      <Route exact path="/login" element={<LoginContainer />} />
       <Route path="/" element={<NavBarContainer/>}/>
       <Route exact path="/" element={<SplashContainer/>}/>
-    </Switch>
-  </div>
+    </Routes>
+  </>
 );
 
 export default App;

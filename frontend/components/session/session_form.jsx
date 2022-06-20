@@ -12,8 +12,17 @@ export default class SessionForm extends React.Component {
     this.loginForm = this.loginForm.bind(this);
     this.signupForm = this.signupForm.bind(this);
   }
-  
-  handleInput(field){
+
+  componentDidMount() {
+    console.log(this.props);
+    console.log(this.props.formType);
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
+  update(field){
     return (e) => {
       this.setState({ [field]: e.target.value })
     } 
@@ -89,13 +98,46 @@ export default class SessionForm extends React.Component {
           {this.renderErrors()}
           {this.props.formType === "login" ? 
             <div className="session-login-form">
-              TESTING LOGIN
+              <label>
+                EMAIL OR PHONE NUMBER
+                <input required type='email' onChange={this.update('email')} className="session-input-email" />
+              </label>
+
+              <label>
+                PASSWORD
+                <input required type='password' onChange={this.update('password')} className="session-input-password" />
+              </label>
+
+              <a href="#" className="session-input-forgot">Forgot your password?</a>
+
+              <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-login-button" />
             </div>
             : 
             <div className="session-signup-form">
-              TESTING SIGNUP
+              <label>
+                EMAIL
+                <input required type='email' onChange={this.update('email')} className="session-input-email" />
+              </label>
+
+              <label>
+                USERNAME
+                <input required type='text' onChange={this.update('username')} className="session-input-username" />
+              </label>
+
+              <label>
+                PASSWORD
+                <input required type='password' onChange={this.update('password')} className="session-input-password" />
+              </label>
+
+              <label>
+                DATE OF BIRTH - TBU
+                <input required type='date'/>
+              </label>
+
+              <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-sign-button"/>
             </div>
           }
+          {this.formSwitcher()}
         </form>
       </div>
     )
