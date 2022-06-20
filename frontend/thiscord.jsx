@@ -4,11 +4,11 @@ import configureStore from "./store/store.js";
 import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
-  let store;
   const root = document.getElementById("root");
-
+  let store;
+  let preloadedState;
   if (window.currentUser) {
-    const preloadedState = {
+    preloadedState = {
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
       },

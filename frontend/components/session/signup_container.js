@@ -8,7 +8,7 @@ const mSTP = ({ errors }) => ({
 })
 
 const mDTP = dispatch => ({
-  createNewUser: formUser => dispatch(createNewUser(formUser)),
+  action: formUser => dispatch(createNewUser(formUser)),
   clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 

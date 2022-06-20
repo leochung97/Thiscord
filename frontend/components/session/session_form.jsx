@@ -17,8 +17,6 @@ export default class SessionForm extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    console.log(this.props.formType);
-    console.log(this.props.errors);
   }
 
   componentWillUnmount() {
@@ -33,7 +31,7 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => this.props.history.push('/'))
+    this.props.action(this.state).then(() => this.props.history.push('/'))
   }
 
   demoLogin() {
@@ -103,13 +101,7 @@ export default class SessionForm extends React.Component {
   renderErrors() {
     return (
       <ul className="session-errors'">
-        { 
-          this.props.errors.map((error, i) => (
-            <li key={i}>
-              { error }
-            </li>
-          ))
-        }
+        {this.props.errors}
       </ul>
     )
   }
@@ -152,11 +144,6 @@ export default class SessionForm extends React.Component {
               <label>
                 PASSWORD
                 <input required type='password' onChange={this.update('password')} className="session-input password" />
-              </label>
-
-              <label>
-                DATE OF BIRTH - TBU
-                <input required type='date'/>
               </label>
 
               <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-sign-button"/>

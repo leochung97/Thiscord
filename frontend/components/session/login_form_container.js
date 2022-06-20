@@ -8,7 +8,7 @@ const mSTP = ({ errors }) => ({
 });
 
 const mDTP = dispatch => ({
-  processForm: user => dispatch(login(user)),
+  action: user => dispatch(login(user)),
   clearSessionErrors: () => dispatch(clearSessionErrors())
 })
 
