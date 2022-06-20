@@ -1,34 +1,28 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Route, Redirect, withRouter } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect, Route, withRouter } from 'react-router-dom';
+
+const mapStateToProps = state => ({
+  loggedIn: Boolean(state.session.currentUser),
+});
 
 const Auth = ({ component: Component, path, loggedIn }) => (
-  <Route 
-    path={path} 
-    render={(props) => (
-    loggedIn ? (
-      <Redirect to="/" />
-    ) : (
-      <Component {...props} />
-    )
-  )} />
+  <Route
+    path={path}
+    render={props => (
+      loggedIn ? <Redirect to="/" /> : <Component {...props} />
+    )}
+  />
 );
 
-const Prot = ({ component: Component, path, loggedIn }) => (
-  <Route 
-    path={path} 
-    render={(props) => (
-    loggedIn ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to="/login"/>
-    )
-  )} />
+const Protected = ({ component: Component, path, loggedIn }) => (
+  <Route
+    path={path}
+    render={props => (
+      loggedIn ? <Component {...props} /> : <Redirect to="/signup" />
+    )}
+  />
 );
 
-const mSTP = state => ({
-  loggedIn: Boolean(state.session.currentUser),
-})
-
-export const AuthRoute = withRouter(connect(mSTP)(Auth));
-export const ProtRoute = withRouter(connect(mSTP)(Prot));
+// export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+// export const ProtRoute = withRouter(connect(mapStateToProps, undefined)(Protected));

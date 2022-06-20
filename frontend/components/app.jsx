@@ -7,12 +7,12 @@ import SplashContainer from "./splash/splash_container";
 import LoginContainer from "./session/login_form_container"
 
 const App = () => (
-  <>
-    <AuthRoute exact path="/signup" component={<SignupContainer/>} />
-    <Route exact path="/login" element={<LoginContainer />} />
+  <Routes>
     <Route path="/" element={<NavBarContainer/>}/>
     <Route exact path="/" element={<SplashContainer/>}/>
-  </>
+    <Route exact path="/signup" element={<SignupContainer/>} />
+    <Route exact path="/login" element={<LoginContainer />} />
+  </Routes>
 );
 
 export default App;
