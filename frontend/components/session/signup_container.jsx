@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createNewUser, clearSessionErrors } from "../../actions/session";
+import { register, clearSessionErrors } from "../../actions/session_actions";
 import SessionForm from './session_form';
 
 const mSTP = ({ errors }) => ({
@@ -8,7 +8,7 @@ const mSTP = ({ errors }) => ({
 })
 
 const mDTP = dispatch => ({
-  action: formUser => dispatch(createNewUser(formUser)),
+  processForm: formUser => dispatch(register(formUser)),
   clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 

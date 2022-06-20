@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { login } from "../../actions/session";
+import { login } from "../../actions/session_actions";
 
 export default class Splash extends React.Component{
   constructor(props) {
@@ -10,7 +10,7 @@ export default class Splash extends React.Component{
   render(){
     return (
       <div className="splash-page">
-        <h1>Is this working?</h1>
+        <h1>Splash!</h1>
       </div>
     )
   }

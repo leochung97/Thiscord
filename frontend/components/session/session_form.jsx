@@ -26,12 +26,12 @@ export default class SessionForm extends React.Component {
   update(field){
     return (e) => {
       this.setState({ [field]: e.target.value })
-    } 
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'))
+    this.props.processForm(this.state).then(() => this.props.history.push('/'));
   }
 
   demoLogin() {
@@ -118,15 +118,16 @@ export default class SessionForm extends React.Component {
                 EMAIL OR PHONE NUMBER
                 <input required type='email' onChange={this.update('email')} className="session-input email" />
               </label>
-
+              <br/>
               <label>
                 PASSWORD
                 <input required type='password' onChange={this.update('password')} className="session-input password" />
               </label>
-
+              <br />
               <a href="#" className="session-input-forgot">Forgot your password?</a>
-
+              <br />
               <button onClick={this.demoLogin} className="session-demo-button">Use Demo Credentials</button>
+              <br />
               <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-login-button" />
             </div>
             : 
@@ -135,17 +136,17 @@ export default class SessionForm extends React.Component {
                 EMAIL
                 <input required type='email' onChange={this.update('email')} className="session-input email" />
               </label>
-
+              <br />
               <label>
                 USERNAME
                 <input required type='text' onChange={this.update('username')} className="session-input username" />
               </label>
-
+              <br />
               <label>
                 PASSWORD
                 <input required type='password' onChange={this.update('password')} className="session-input password" />
               </label>
-
+              <br />
               <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-sign-button"/>
             </div>
           }
