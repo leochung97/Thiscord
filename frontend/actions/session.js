@@ -7,17 +7,21 @@ export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
 const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  user,
 });
 
 const logoutCurrentUser = () => ({
-  type: LOGOUT_CURRENT_USER
+  type: LOGOUT_CURRENT_USER,
 });
 
 const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
-  errors
+  errors,
 })
+
+export const clearSessionErrors = () => ({
+  type: CLEAR_SESSION_ERRORS,
+});
 
 export const createNewUser = formUser => dispatch => (
   SessionAPIUtil.postUser(formUser)
@@ -35,7 +39,3 @@ export const logout = () => dispatch => (
   SessionAPIUtil.deleteSession()
     .then(() => dispatch(logoutCurrentUser()))
 );
-
-export const clearSessionErrors = () => ({
-  type: CLEAR_SESSION_ERRORS
-});

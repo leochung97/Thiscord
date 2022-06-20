@@ -1,4 +1,5 @@
 import React from "react";
+import Typed from 'typed.js';
 
 export default class SessionForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.loginForm = this.loginForm.bind(this);
     this.signupForm = this.signupForm.bind(this);
   }
@@ -16,6 +18,7 @@ export default class SessionForm extends React.Component {
   componentDidMount() {
     console.log(this.props);
     console.log(this.props.formType);
+    console.log(this.props.errors);
   }
 
   componentWillUnmount() {
@@ -30,9 +33,30 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state).then(() => this.props.history.push('/'))
+    this.props.processForm(this.state).then(() => this.props.history.push('/'))
   }
 
+  demoLogin() {
+    const email = {
+      strings: ["demouser@demo.com"],
+      typeSpeed: 75,
+    };
+
+    const password = {
+      strings: ["demopass"],
+      typeSpeed: 75,
+    };
+
+    this.setState({
+      email: '',
+      password: ''
+    });
+
+    new Typed(".email", email);
+    new Typed(".password", password);
+  }
+
+  // SWITCH TO LOGIN / SIGNUP
   formSwitcher(){
     if (this.props.formType === "login") {
       return (
@@ -100,33 +124,34 @@ export default class SessionForm extends React.Component {
             <div className="session-login-form">
               <label>
                 EMAIL OR PHONE NUMBER
-                <input required type='email' onChange={this.update('email')} className="session-input-email" />
+                <input required type='email' onChange={this.update('email')} className="session-input email" />
               </label>
 
               <label>
                 PASSWORD
-                <input required type='password' onChange={this.update('password')} className="session-input-password" />
+                <input required type='password' onChange={this.update('password')} className="session-input password" />
               </label>
 
               <a href="#" className="session-input-forgot">Forgot your password?</a>
 
+              <button onClick={this.demoLogin} className="session-demo-button">Use Demo Credentials</button>
               <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-login-button" />
             </div>
             : 
             <div className="session-signup-form">
               <label>
                 EMAIL
-                <input required type='email' onChange={this.update('email')} className="session-input-email" />
+                <input required type='email' onChange={this.update('email')} className="session-input email" />
               </label>
 
               <label>
                 USERNAME
-                <input required type='text' onChange={this.update('username')} className="session-input-username" />
+                <input required type='text' onChange={this.update('username')} className="session-input username" />
               </label>
 
               <label>
                 PASSWORD
-                <input required type='password' onChange={this.update('password')} className="session-input-password" />
+                <input required type='password' onChange={this.update('password')} className="session-input password" />
               </label>
 
               <label>
