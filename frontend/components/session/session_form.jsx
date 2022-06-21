@@ -31,6 +31,7 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props);
     this.props.processForm(this.state).then(() => this.props.history.push('/'));
   }
 
