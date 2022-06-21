@@ -20,7 +20,7 @@ const App = () => (
         <h1>ThisCord</h1>
       </Link>
     </header>
-    
+
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

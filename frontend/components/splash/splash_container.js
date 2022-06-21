@@ -1,19 +1,15 @@
 import { connect } from 'react-redux';
-
-import { logout } from '../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
+import { login, logout } from '../../actions/session_actions';
 import Splash from './splash';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
-  return {
-    currentUser: users[session.id]
-  };
-};
+const mSTP = state => ({
+  loggedIn: Boolean(state.session.id),
+});
 
-const mapDispatchToProps = dispatch => ({
+const mDTP = dispatch => ({
+  login: user => dispatch(login(user)),
   logout: () => dispatch(logout())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Splash);
+export default withRouter(connect(mSTP, mDTP)(Splash));
