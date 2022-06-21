@@ -10,22 +10,20 @@ export default class Splash extends React.Component {
     return(
       <div className="splash-page-wrapper">
         <header>
-          <nav className="splash-header-wrapper">
-            <div className="splash-header-logo">
-              LOGO GOES HERE
-            </div>
-            <ul className="splash-header-nav">
-              <li><a href="https://github.com/leochung97/Thiscord">Thiscode Github</a></li>
-              <li><a href="https://github.com/leochung97/Thiscord/wiki/MVP-List">MVP List</a></li>
-              <li><a href="https://github.com/leochung97/Thiscord/wiki/Database-Schema">Schema</a></li>
-              <li><a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a></li>
-              <li><a href="https://github.com/leochung97/Thiscord/wiki/Frontend-Routes-and-Components">Frontend</a></li>
-              <li><a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a></li>
-              <li><Link to="/login" className="splash-header-login-button">
+          <nav className="splash-header-nav">
+              <Link to="/" className="splash-header-logo">LOGO</Link>
+              <div className="splash-header-nav-links">
+                <a href="https://github.com/leochung97/Thiscord">Thiscode Github</a>
+                <a href="https://github.com/leochung97/Thiscord/wiki/MVP-List">MVP List</a>
+                <a href="https://github.com/leochung97/Thiscord/wiki/Database-Schema">Schema</a>
+                <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a>
+                <a href="https://github.com/leochung97/Thiscord/wiki/Frontend-Routes-and-Components">Frontend</a>
+                <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a>
+              </div>
+              <Link to="/login" className="splash-header-login-button">
                 { this.props.loggedIn ? "Open Discord" : "Login" }
-              </Link></li>
-              { this.props.loggedIn ? <li><button onClick={this.props.logout}>Logout</button></li> : "" }
-            </ul>
+              </Link>
+              { this.props.loggedIn ? <button onClick={this.props.logout}>Logout</button> : "" }
           </nav>
 
           <div className="splash-header-content">
