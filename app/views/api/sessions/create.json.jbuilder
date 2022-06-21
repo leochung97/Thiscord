@@ -1,1 +1,0 @@
-json.partial! "api/users/current_user", current_user: @user

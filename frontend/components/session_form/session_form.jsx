@@ -31,8 +31,10 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+    console.log(user);
     console.log(this.props);
-    this.props.processForm(this.state).then(() => this.props.history.push('/'));
   }
 
   demoLogin() {
@@ -101,10 +103,14 @@ export default class SessionForm extends React.Component {
   // ERRORS HANDLING
   renderErrors() {
     return (
-      <ul className="session-errors'">
-        {this.props.errors}
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
       </ul>
-    )
+    );
   }
 
   render() {
