@@ -33,8 +33,6 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    console.log(user);
-    console.log(this.props);
   }
 
   demoLogin() {

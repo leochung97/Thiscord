@@ -9,12 +9,14 @@ export default class Splash extends React.Component {
   render() {
     return(
       <div className="splash-page-wrapper">
-        WRAPPER CONTAINER
-
         <header>
-          HEADER CONTAINER
+          HEADER CONTAINER STARTS HERE
+          <br />
+          <br />
+          <br />
           <nav className="splash-header-wrapper">
             <div className="splash-header-logo">
+              LOGO GOES HERE
             </div>
             <ul className="splash-header-nav">
               <li><a href="https://github.com/leochung97/Thiscord">Thiscode Github</a></li>
@@ -64,15 +66,18 @@ export default class Splash extends React.Component {
             <a href="">Facebook</a>
             <a href="">Youtube</a>
           </div>
+
           <div className="splash-footer-column-2">
             SEPARATOR
           </div>
+
           <div className="splash-footer-column-3">
             Product
             <a href="">Download</a>
             <a href="">Nitro</a>
             <a href="">Status</a>
           </div>
+
           <div className="splash-footer-column-4">
             Company
             <a href="">About</a>
@@ -80,6 +85,7 @@ export default class Splash extends React.Component {
             <a href="">Branding</a>
             <a href="">Newsroom</a>
           </div>
+
           <div className="splash-footer-column-5">
             Resources
             <a href="">College</a>
@@ -90,6 +96,7 @@ export default class Splash extends React.Component {
             <a href="">Developers</a>
             <a href="">StreamKit</a>
           </div>
+
           <div className="splash-footer-column-6">
             Policies
             <a href="">Terms</a>
@@ -103,6 +110,7 @@ export default class Splash extends React.Component {
 
           <nav className="splash-footer-wrapper">
             <div className="splash-footer-logo">
+              LOGO GOES HERE
             </div>
             <div className="splash-footer-login-button">
               <Link to="/login" className="splash-login-button">
