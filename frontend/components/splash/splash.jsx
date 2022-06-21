@@ -10,9 +10,9 @@ export default class Splash extends React.Component {
     return(
       <div className="splash-page-wrapper">
         <header>
-          <img src="" className="splash-header-background" alt/>
-          <img src="" className="splash-header-background-left" alt />
-          <img src="" className="splash-header-background-right" alt />
+          <img src="" className="splash-header-background" alt="" />
+          <img src="" className="splash-header-background-left" alt="" />
+          <img src="" className="splash-header-background-right" alt="" />
           <nav className="splash-header-nav">
               <Link to="/" className="splash-header-logo">LOGO</Link>
               <div className="splash-header-nav-links">
@@ -36,7 +36,6 @@ export default class Splash extends React.Component {
               <Link to="/login" className="splash-header-download-button">
                 Download for Mac
               </Link>
-
               <Link to="/login" className="splash-header-open-button">
                 Open Discord in your browser
               </Link>
@@ -45,27 +44,37 @@ export default class Splash extends React.Component {
         </header>
 
         <section>
-          <div className="splash-content-1">
-            <h1>Create an invite-only place where you belong</h1>
-            <h3>Discord servers are orgnaized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</h3>
+          <div className="splash-content-grid-1">
+            <div className="splash-content-1">
+              <h1>Create an invite-only place where you belong</h1>
+              <h3>Discord servers are orgnaized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</h3>
+            </div>
           </div>
-          <div className="splash-content-2">
-            <h1>Where hanging out is easy</h1>
-            <h3>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</h3>
+          <div className="splash-content-grid-2">
+            <div className="splash-content-2">
+              <h1>Where hanging out is easy</h1>
+              <h3>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</h3>
+            </div>
           </div>
-          <div className="splash-content-3">
-            <h1>From few to a fandom</h1>
-            <h3>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</h3>
+          <div className="splash-content-grid-3">
+            <div className="splash-content-3">
+              <h1>From few to a fandom</h1>
+              <h3>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</h3>
+            </div>
           </div>
-          <div className="splash-content-4">
-            <h1>RELIABLE TECH FOR STAYING CLOSE</h1>
-            <h3>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</h3>
+          <div className="splash-content-grid-4">
+            <div className="splash-content-4">
+              <h1>RELIABLE TECH FOR STAYING CLOSE</h1>
+              <h3>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</h3>
+            </div>
           </div>
-          <div className="splash-content-ready">
-            <h1>Ready to start your journey?</h1>
-            <Link to="/login" className="splash-login-button">
-              {this.props.loggedIn ? "Open Discord" : "Download for Mac"}
-            </Link>
+          <div className="splash-content-grid-5">
+            <div className="splash-content-ready">
+              <h1>Ready to start your journey?</h1>
+              <Link to="/login" className="splash-login-button">
+                {this.props.loggedIn ? "Open Discord" : "Download for Mac"}
+              </Link>
+            </div>
           </div>
         </section>
 
