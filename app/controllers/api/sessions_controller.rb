@@ -6,11 +6,9 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-      puts "--- DID FIND THE USER ---"
       login!(@user)
       render "api/users/show"
     else
-      puts "--- DID NOT FIND THE USER ---"
       render json: ["Invalid login credentials"], status: 401
     end
   end

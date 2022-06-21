@@ -55,6 +55,10 @@ export default class SessionForm extends React.Component {
 
     new Typed(".email", email);
     new Typed(".password", password);
+
+    setTimeout(() => {
+      this.props.processForm({ email: "demo@demo.com", password: "demopass" })
+    }, 1000);
   }
 
   // SWITCH TO LOGIN / SIGNUP
