@@ -10,6 +10,9 @@ export default class Splash extends React.Component {
     return(
       <div className="splash-page-wrapper">
         <header>
+          <img src="" className="splash-header-background" alt/>
+          <img src="" className="splash-header-background-left" alt />
+          <img src="" className="splash-header-background-right" alt />
           <nav className="splash-header-nav">
               <Link to="/" className="splash-header-logo">LOGO</Link>
               <div className="splash-header-nav-links">
