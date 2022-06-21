@@ -23,7 +23,7 @@ export default class Splash extends React.Component {
               <li><a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a></li>
               <li><a href="https://github.com/leochung97/Thiscord/wiki/Frontend-Routes-and-Components">Frontend</a></li>
               <li><a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a></li>
-              <li><Link to="/login" className="splash-login-button">
+              <li><Link to="/login" className="splash-header-login-button">
                 { this.props.loggedIn ? "Open Discord" : "Login" }
               </Link></li>
               { this.props.loggedIn ? <li><button onClick={this.props.logout}>Logout</button></li> : "" }
@@ -57,7 +57,59 @@ export default class Splash extends React.Component {
         </section>
 
         <footer>
-          <div>FOOTER CONTAINER</div>
+          <div className="splash-footer-column-1">
+            IMAGINE A PLACE
+            <a href="">Twitter</a>
+            <a href="">Instagram</a>
+            <a href="">Facebook</a>
+            <a href="">Youtube</a>
+          </div>
+          <div className="splash-footer-column-2">
+            SEPARATOR
+          </div>
+          <div className="splash-footer-column-3">
+            Product
+            <a href="">Download</a>
+            <a href="">Nitro</a>
+            <a href="">Status</a>
+          </div>
+          <div className="splash-footer-column-4">
+            Company
+            <a href="">About</a>
+            <a href="">Jobs</a>
+            <a href="">Branding</a>
+            <a href="">Newsroom</a>
+          </div>
+          <div className="splash-footer-column-5">
+            Resources
+            <a href="">College</a>
+            <a href="">Support</a>
+            <a href="">Safety</a>
+            <a href="">Blog</a>
+            <a href="">Feedback</a>
+            <a href="">Developers</a>
+            <a href="">StreamKit</a>
+          </div>
+          <div className="splash-footer-column-6">
+            Policies
+            <a href="">Terms</a>
+            <a href="">Privacy</a>
+            <a href="">Cookie Settings</a>
+            <a href="">Guidelines</a>
+            <a href="">Acknowledgements</a>
+            <a href="">Licenses</a>
+            <a href="">Moderation</a>
+          </div>
+
+          <nav className="splash-footer-wrapper">
+            <div className="splash-footer-logo">
+            </div>
+            <div className="splash-footer-login-button">
+              <Link to="/login" className="splash-login-button">
+                {this.props.loggedIn ? "Open Discord" : "Login"}
+              </Link>
+            </div>
+          </nav>
         </footer>
       </div>
     )
