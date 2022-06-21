@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+  font-family: "Whitney-Bold";
+  src: url("Whitney-Bold.woff2");
+ }
+
+ button,
+ input {
+   outline: none;
+   font-family: inherit;
+   cursor: pointer;
+ }
+
+ body {
+  font-family: "Whitney-Bold";
+  text-rendering: optimizeLegibility;
+  line-height: 1.15;
+ }

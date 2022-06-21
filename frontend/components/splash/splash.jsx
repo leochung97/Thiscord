@@ -10,10 +10,6 @@ export default class Splash extends React.Component {
     return(
       <div className="splash-page-wrapper">
         <header>
-          HEADER CONTAINER STARTS HERE
-          <br />
-          <br />
-          <br />
           <nav className="splash-header-wrapper">
             <div className="splash-header-logo">
               LOGO GOES HERE
@@ -31,6 +27,19 @@ export default class Splash extends React.Component {
               { this.props.loggedIn ? <li><button onClick={this.props.logout}>Logout</button></li> : "" }
             </ul>
           </nav>
+
+          <div className="splash-header-content">
+            <h1>IMAGINE A PLACE...</h1>
+            <h3>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</h3>
+          </div>
+          
+          <Link to="/login" className="splash-header-download-button">
+            Download for Mac
+          </Link>
+
+          <Link to="/login" className="splash-header-open-button">
+            Open Discord in your browser
+          </Link>
         </header>
 
         <section>
