@@ -40,12 +40,12 @@ export default class SessionForm extends React.Component {
   demoLogin() {
     const email = {
       strings: ["demouser@demo.com"],
-      typeSpeed: 75,
+      typeSpeed: 50,
     };
 
     const password = {
       strings: ["demopass"],
-      typeSpeed: 75,
+      typeSpeed: 50,
     };
 
     this.setState({
