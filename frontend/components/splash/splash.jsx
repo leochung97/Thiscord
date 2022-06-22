@@ -27,9 +27,9 @@ export default class Splash extends React.Component {
           </nav>
 
           <div className="splash-header-content">
-            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_left.svg" className="splash-header-background-left" alt="" />
-            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_right.svg" className="splash-header-background-right" alt="" />
-            <img src="https://thiscord-assets.s3.amazonaws.com/discord-header-background-image.svg" className="splash-header-background" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_left.svg" className="splash-header-background-left" alt="Mountains" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_right.svg" className="splash-header-background-right" alt="Discord Characters Hanging" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/discord-header-background-image.svg" className="splash-header-background" alt="Discord Characters Hanging" />
             <h1>IMAGINE A PLACE...</h1>
             <h3>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</h3>
             <div className="splash-header-buttons">
@@ -45,21 +45,21 @@ export default class Splash extends React.Component {
 
         <section>
           <div className="splash-content-grid-1">
-            <img src="https://thiscord-assets.s3.amazonaws.com/splash_channels.svg" className="splash-content-image-1" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_channels.svg" className="splash-content-image-1" alt="Text Channels Example" />
             <div className="splash-content-1">
               <h1>Create an invite-only place where you belong</h1>
               <h3>Thiscord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</h3>
             </div>
           </div>
           <div className="splash-content-grid-2">
-            <img src="" className="splash-content-image-2" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_voice.svg" className="splash-content-image-2" alt="Voice Channels Example" />
             <div className="splash-content-2">
               <h1>Where hanging out is easy</h1>
               <h3>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</h3>
             </div>
           </div>
           <div className="splash-content-grid-3">
-            <img src="" className="splash-content-image-3" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_friends.svg" className="splash-content-image-3" alt="Server Roles Example" />
             <div className="splash-content-3">
               <h1>From few to a fandom</h1>
               <h3>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</h3>
@@ -70,6 +70,7 @@ export default class Splash extends React.Component {
               <h1>RELIABLE TECH FOR STAYING CLOSE</h1>
               <h3>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</h3>
             </div>
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_video.svg" className="splash-content-image-4" alt="Stream Example" />
           </div>
           <div className="splash-content-grid-5">
             <div className="splash-content-ready">
