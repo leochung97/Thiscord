@@ -80,7 +80,7 @@ export default class Splash extends React.Component {
           <div className="splash-content-grid-5">
             <div className="splash-content-ready">
               <h1>Ready to start your journey?</h1>
-              <Link to="/login" className="splash-login-button">
+              <Link to="/login" className="splash-ready-button">
                 {this.props.loggedIn ? "Open Discord" : "Download for Mac"}
               </Link>
             </div>
@@ -139,7 +139,7 @@ export default class Splash extends React.Component {
 
           <nav className="splash-footer-wrapper">
             <div className="splash-footer-logo">
-              LOGO GOES HERE
+              Thiscord
             </div>
             <div className="splash-footer-login-button">
               <Link to="/login" className="splash-login-button">

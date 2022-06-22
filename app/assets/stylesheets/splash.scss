@@ -238,25 +238,43 @@ footer > div > a:visited {
   text-decoration: none;
 }
 
-.splash-login-button {
-  display: block; 
+.splash-content-ready {
+  width: 652px;
+  height: 80px;
+  padding: 0 0 0 0;
+  display: flex;
+  vertical-align: baseline;
+  margin: 0 auto 0 auto;
+}
+
+.splash-ready-button {
+  display: inline-flex; 
   font-family: var(--font-primary);
   font-weight: 500;
   font-size: 20px;
   color: white;
   background-color: #5865f2;
   border-radius: 28px;
-  margin-top: 40px;
   padding: 16px 32px;
   width: auto;
   line-height: 24px;
+  max-height: 24px;
+  text-align: center;
   transition-property: background-color, -webkit-box-shadow;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
+  justify-content: center;
 }
 
-.splash-login-button:hover {
+.splash-ready-button:hover {
   background-color: #7289da;
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.splash-footer-logo {
+  font-family: var(--font-glitch);
+  font-weight: 800;
+  margin-left: 40px;
+  font-size: 20px;
 }
