@@ -21,11 +21,11 @@ export default class Splash extends React.Component {
               <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a>
             </div>
             <Link to="/login" className="splash-header-login-button">
-              {this.props.loggedIn ? "Open Discord" : "Login"}
+              {this.props.loggedIn ? "Open Thiscord" : "Login"}
             </Link>
             {this.props.loggedIn ? <button onClick={this.props.logout}>Logout</button> : ""}
           </nav>
-          
+
           <div className="splash-header-content">
             <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_left.svg" className="splash-header-background-left" alt="" />
             <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_right.svg" className="splash-header-background-right" alt="" />
@@ -37,7 +37,7 @@ export default class Splash extends React.Component {
                 Download for Mac
               </Link>
               <Link to="/login" className="splash-header-open-button">
-                Open Discord in your browser
+                Open Thiscord in your browser
               </Link>
             </div>
           </div>
@@ -45,30 +45,24 @@ export default class Splash extends React.Component {
 
         <section>
           <div className="splash-content-grid-1">
-            <div className="splash-content-container-1">
-              <img src="" className="splash-content-image-1" alt="" />
-              <div className="splash-content-1">
-                <h1>Create an invite-only place where you belong</h1>
-                <h3>Discord servers are orgnaized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</h3>
-              </div>
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_channels.svg" className="splash-content-image-1" alt="" />
+            <div className="splash-content-1">
+              <h1>Create an invite-only place where you belong</h1>
+              <h3>Thiscord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</h3>
             </div>
           </div>
           <div className="splash-content-grid-2">
-            <div className="splash-content-container-2">
-              <img src="" className="splash-content-image-2" alt="" />
-              <div className="splash-content-2">
-                <h1>Where hanging out is easy</h1>
-                <h3>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</h3>
-              </div>
+            <img src="" className="splash-content-image-2" alt="" />
+            <div className="splash-content-2">
+              <h1>Where hanging out is easy</h1>
+              <h3>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</h3>
             </div>
           </div>
           <div className="splash-content-grid-3">
-            <div className="splash-content-container-3">
-              <img src="" className="splash-content-image-3" alt="" />
-              <div className="splash-content-3">
-                <h1>From few to a fandom</h1>
-                <h3>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</h3>
-              </div>
+            <img src="" className="splash-content-image-3" alt="" />
+            <div className="splash-content-3">
+              <h1>From few to a fandom</h1>
+              <h3>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</h3>
             </div>
           </div>
           <div className="splash-content-grid-4">
@@ -81,7 +75,7 @@ export default class Splash extends React.Component {
             <div className="splash-content-ready">
               <h1>Ready to start your journey?</h1>
               <Link to="/login" className="splash-ready-button">
-                {this.props.loggedIn ? "Open Discord" : "Download for Mac"}
+                {this.props.loggedIn ? "Open Thiscord" : "Download for Mac"}
               </Link>
             </div>
           </div>
@@ -143,7 +137,7 @@ export default class Splash extends React.Component {
             </div>
             <div className="splash-footer-login-button">
               <Link to="/login" className="splash-login-button">
-                {this.props.loggedIn ? "Open Discord" : "Login"}
+                {this.props.loggedIn ? "Open Thiscord" : "Login"}
               </Link>
             </div>
           </nav>
