@@ -28,21 +28,17 @@ header {
   background-color: #404eed;
 }
 
-header > img {
-  display: flex;
-}
-
 // Navigation Bar
 .splash-header-nav {
   display: flex;
   flex-wrap: wrap;
+  position: absolute;
   justify-content: space-between;
-  max-width: 1180px;
+  width: 100%;
   height: 80px;
   align-items: center;
   vertical-align: middle;
-  margin-left: auto;
-  margin-right: auto;
+  z-index: 2;
 }
 
 .splash-header-nav * {
@@ -100,8 +96,10 @@ header > img {
   display: block;
   color: white;
   max-width: 780px;
+  height: 386px;
   margin: 0 auto 0 auto;
   padding: 120px 40px 120px 40px;
+  z-index: 2;
 }
 
 .splash-header-content > h1 {
@@ -109,10 +107,12 @@ header > img {
   font-size: 56px;
   font-weight: 900;
   line-height: 95%;
+  margin-top: 100px;
   text-align: center;
   vertical-align: baseline;
   text-transform: uppercase;
   text-rendering: geometricPrecision;
+  z-index: 3;
 }
 
 .splash-header-content > h3 {
@@ -123,6 +123,14 @@ header > img {
   font-size: 20px;
   font-weight: 300px;
   line-height: 1.625;
+  z-index: 3;
+}
+
+.splash-header-content > img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 163px;
 }
 
 .splash-header-buttons {
@@ -144,6 +152,26 @@ header > img {
   transition-property: color, background-color;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
+  z-index: 3;
+}
+
+.splash-header-background {
+  margin-left: -1280px;
+  pointer-events: none;
+}
+
+.splash-header-background-left {
+  height: auto;
+  width: auto;
+  margin-left: -1030px;
+  z-index: 3;
+}
+
+.splash-header-background-right {
+  height: auto;
+  width: auto;
+  margin-left: 370px;
+  z-index: 3;
 }
 
 .splash-header-download-button {

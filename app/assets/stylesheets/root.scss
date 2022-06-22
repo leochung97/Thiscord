@@ -10,3 +10,8 @@
   --font-glitch: "ArchivoBlack", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --font-cursive: "Reenie Beanie", "Comic Sans MS", cursive, sans-serif;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

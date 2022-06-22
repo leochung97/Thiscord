@@ -10,26 +10,26 @@ export default class Splash extends React.Component {
     return(
       <div className="splash-page-wrapper">
         <header>
-          <img src="" className="splash-header-background" alt="" />
-          <img src="" className="splash-header-background-left" alt="" />
-          <img src="" className="splash-header-background-right" alt="" />
           <nav className="splash-header-nav">
-              <Link to="/" className="splash-header-logo">Thiscord</Link>
-              <div className="splash-header-nav-links">
-                <a href="https://github.com/leochung97/Thiscord">Project Github</a>
-                <a href="https://github.com/leochung97/Thiscord/wiki/MVP-List">MVP List</a>
-                <a href="https://github.com/leochung97/Thiscord/wiki/Database-Schema">Schema</a>
-                <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a>
-                <a href="https://github.com/leochung97/Thiscord/wiki/Frontend-Routes-and-Components">Frontend</a>
-                <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a>
-              </div>
-              <Link to="/login" className="splash-header-login-button">
-                { this.props.loggedIn ? "Open Discord" : "Login" }
-              </Link>
-              { this.props.loggedIn ? <button onClick={this.props.logout}>Logout</button> : "" }
+            <Link to="/" className="splash-header-logo">Thiscord</Link>
+            <div className="splash-header-nav-links">
+              <a href="https://github.com/leochung97/Thiscord">Project Github</a>
+              <a href="https://github.com/leochung97/Thiscord/wiki/MVP-List">MVP List</a>
+              <a href="https://github.com/leochung97/Thiscord/wiki/Database-Schema">Schema</a>
+              <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a>
+              <a href="https://github.com/leochung97/Thiscord/wiki/Frontend-Routes-and-Components">Frontend</a>
+              <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Backend</a>
+            </div>
+            <Link to="/login" className="splash-header-login-button">
+              {this.props.loggedIn ? "Open Discord" : "Login"}
+            </Link>
+            {this.props.loggedIn ? <button onClick={this.props.logout}>Logout</button> : ""}
           </nav>
-
+          
           <div className="splash-header-content">
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_left.svg" className="splash-header-background-left" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/splash_header_right.svg" className="splash-header-background-right" alt="" />
+            <img src="https://thiscord-assets.s3.amazonaws.com/discord-header-background-image.svg" className="splash-header-background" alt="" />
             <h1>IMAGINE A PLACE...</h1>
             <h3>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</h3>
             <div className="splash-header-buttons">
