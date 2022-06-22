@@ -14,9 +14,9 @@ export default class Splash extends React.Component {
           <img src="" className="splash-header-background-left" alt="" />
           <img src="" className="splash-header-background-right" alt="" />
           <nav className="splash-header-nav">
-              <Link to="/" className="splash-header-logo">LOGO</Link>
+              <Link to="/" className="splash-header-logo">Thiscord</Link>
               <div className="splash-header-nav-links">
-                <a href="https://github.com/leochung97/Thiscord">Thiscode Github</a>
+                <a href="https://github.com/leochung97/Thiscord">Project Github</a>
                 <a href="https://github.com/leochung97/Thiscord/wiki/MVP-List">MVP List</a>
                 <a href="https://github.com/leochung97/Thiscord/wiki/Database-Schema">Schema</a>
                 <a href="https://github.com/leochung97/Thiscord/wiki/Sample-State">Sample State</a>
