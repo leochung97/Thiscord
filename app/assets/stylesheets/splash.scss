@@ -73,7 +73,7 @@ header {
   margin-right: 40px;
   padding: 7px 16px;
   line-height: 24px;
-  transition-property: color;
+  transition-property: color, -webkit-box-shadow;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
 }
@@ -81,6 +81,7 @@ header {
 .splash-header-login-button:hover {
   color: #7289da;
   text-decoration: none;
+  box-shadow: 0 8px 8px #23272a;
 }
 
 // Imagine a Place...
@@ -179,6 +180,10 @@ section > div > div {
   gap: 0 20px;
 }
 
+section > div > div:last-child {
+  height: 284.4px;
+}
+
 section > div > div > div > h1 {
   display: block;
   font-size: 48px;
@@ -217,5 +222,27 @@ footer > div > a:link {
 
 footer > div > a:visited {
   color: white;
+  text-decoration: none;
+}
+
+.splash-login-button {
+  display: inline-flex;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  background-color: #5865f2;
+  border-radius: 28px;
+  margin-top: 40px;
+  padding: 16px 32px;
+  width: auto;
+  line-height: 24px;
+  transition-property: background-color, -webkit-box-shadow;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+
+.splash-login-button:hover {
+  background-color: #7289da;
   text-decoration: none;
 }
