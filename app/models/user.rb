@@ -9,6 +9,19 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :admin_servers,
+    foreign_key: :admin_id,
+    class_name: :Server,
+    dependent: :destroy
+
+  has_many :servers_partof,
+    foreign_key: :member_id,
+    class_Name: :ServerMember
+
+  has_many :servers,
+    through: :servers_partof,
+    source: :server
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil if user.nil?

@@ -26,6 +26,7 @@ a:hover {
 header {
   border: 1px solid black;
   background-color: #404eed;
+  position: relative;
 }
 
 // Navigation Bar
@@ -127,11 +128,11 @@ header {
 }
 
 .splash-header-content > img {
-  display: block;
   position: absolute;
+  bottom: 0;
   left: 50%;
-  bottom: 163px;
   pointer-events: none;
+  justify-content: baseline;
 }
 
 .splash-header-buttons {
