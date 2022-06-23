@@ -73,7 +73,7 @@ export default class Splash extends React.Component {
             <img src="https://thiscord-assets.s3.amazonaws.com/splash_video.svg" className="splash-content-image-4" alt="Stream Example" />
           </div>
           <div className="splash-content-grid-5">
-            <div className="splash-content-ready">
+            <div className="splash-content-ready-container">
               <img src="https://thiscord-assets.s3.amazonaws.com/splash_sparkles.svg" className="splash-content-ready-sparkles" alt="" />
               <h1>Ready to start your journey?</h1>
               <Link to="/login" className="splash-ready-button">
