@@ -119,27 +119,33 @@ export default class SessionForm extends React.Component {
     return (
       <div className="session-page-wrapper">
         <form onSubmit={this.handleSubmit}>
-          {this.renderMessage()}
           {this.renderErrors()}
           {this.props.formType === "login" ?
             <div className="session-login-form">
-              <label>
-                EMAIL OR PHONE NUMBER
-                <input required type='email' onChange={this.update('email')} className="session-input email" />
-              </label>
-              <br />
-              <label>
-                PASSWORD
-                <input required type='password' onChange={this.update('password')} className="session-input password" />
-              </label>
-              <br />
-              <a href="#" className="session-input-forgot">Forgot your password?</a>
-              <br />
-              <button onClick={this.demoLogin} className="session-demo-button">Use Demo Credentials</button>
-              <br />
-              <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-login-button" />
+              {this.renderMessage()}
+              <div className="session-input-block">
+                <label>
+                  EMAIL OR PHONE NUMBER
+                  <input required type='email' onChange={this.update('email')} className="session-input email" />
+                </label>
+                <label>
+                  PASSWORD
+                  <input required type='password' onChange={this.update('password')} className="session-input password" />
+                </label>
+                <a href="#" className="session-input-forgot">Forgot your password?</a>
+                <button onClick={this.demoLogin} className="session-demo-button">Use Demo Credentials</button>
+                <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-login-button" />
+                {this.formSwitcher()}
+              </div>
+              <div className="session-QR-block">
+                <img src="" className="session-qr-img" alt=""></img>
+                <div className="session-qr-login">Log in with QR Code</div>
+                <div className="session-qr-instruction">Scan this with the <strong>Thiscord mobile app</strong> to log in instantly.</div>
+              </div>
             </div>
+
             :
+
             <div className="session-signup-form">
               <label>
                 EMAIL
@@ -159,7 +165,7 @@ export default class SessionForm extends React.Component {
               <input type='submit' value={this.props.formtype === 'login' ? 'Login' : 'Continue'} className="session-sign-button" />
             </div>
           }
-          {this.formSwitcher()}
+          
         </form>
       </div>
     )
