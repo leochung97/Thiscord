@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :admin_servers,
+  has_many :owned_servers,
     foreign_key: :admin_id,
     class_name: :Server,
     dependent: :destroy

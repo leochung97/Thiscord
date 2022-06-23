@@ -74,6 +74,7 @@ export default class Splash extends React.Component {
           </div>
           <div className="splash-content-grid-5">
             <div className="splash-content-ready">
+              <img src="https://thiscord-assets.s3.amazonaws.com/splash_sparkles.svg" className="splash-content-ready-sparkles" alt="" />
               <h1>Ready to start your journey?</h1>
               <Link to="/login" className="splash-ready-button">
                 {this.props.loggedIn ? "Open Thiscord" : "Download for Mac"}
