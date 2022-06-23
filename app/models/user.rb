@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :servers_partof,
     foreign_key: :member_id,
-    class_Name: :ServerMember
+    class_name: :ServerMember
 
   has_many :servers,
     through: :servers_partof,
