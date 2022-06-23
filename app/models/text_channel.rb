@@ -1,0 +1,2 @@
+class TextChannel < ApplicationRecord
+end
