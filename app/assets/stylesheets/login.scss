@@ -6,5 +6,69 @@
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.session-login-container {
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: start;
+}
+
+.session-form-welcome {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.session-form-welcome > h3 {
   display: block;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.session-form-welcome > div {
+  color: #b9bbbe;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  display: block;
+}
+
+.session-input-block > label {
+  color: #b9bbbe;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 8px;
+  font-weight: 800px;
+  display: block;
+}
+
+.session-empty-block {
+  width: 66px;
+}
+
+.session-qr-container {
+  align-items: center;
+}
+
+.session-qr-img {
+  width: 176px;
+  height: 176px;
+}
+
+.session-qr-container {
+  width: 240px;
 }
