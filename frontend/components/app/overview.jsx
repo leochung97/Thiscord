@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./home"
 
 export default class Overview extends React.Component {
@@ -7,7 +7,7 @@ export default class Overview extends React.Component {
     return (
       <div className="overview-wrapper">
         <Switch>
-          <Route path="/channels/@me" component={Home}/>
+          <Route path="/channels/@me" component={Home} />
         </Switch>
       </div>
     )
