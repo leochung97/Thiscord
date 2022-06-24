@@ -1,11 +1,10 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
-#                 api_users GET    /api/users(.:format)                                                                     api/users#index {:format=>:json}
-#                           POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
-#                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>:json}
-#                           PATCH  /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
-#                           PUT    /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
+#                  api_user GET    /api/user(.:format)                                                                      api/users#show {:format=>:json}
+#                           PATCH  /api/user(.:format)                                                                      api/users#update {:format=>:json}
+#                           PUT    /api/user(.:format)                                                                      api/users#update {:format=>:json}
+#                           POST   /api/user(.:format)                                                                      api/users#create {:format=>:json}
 #               api_servers GET    /api/servers(.:format)                                                                   api/servers#index {:format=>:json}
 #                           POST   /api/servers(.:format)                                                                   api/servers#create {:format=>:json}
 #                api_server GET    /api/servers/:id(.:format)                                                               api/servers#show {:format=>:json}
@@ -23,10 +22,8 @@
 
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create, :index, :show, :update]
+    resource :user, only: [:create, :index, :show, :update]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
-    
-    
     
     resource :session, only: [:create, :destroy]
   end

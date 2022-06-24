@@ -32,7 +32,9 @@ export default class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => {
+      this.props.history.push("/channels/@me")
+    });
   }
 
   demoLogin() {
@@ -54,9 +56,9 @@ export default class SessionForm extends React.Component {
     new Typed(".email", email);
     new Typed(".password", password);
 
-    setTimeout(() => {
-      this.props.processForm({ email: "demo@demo.com", password: "demopass" })
-    }, 1000);
+    setTimeout(() => { this.props.processForm({ email: "demo@demo.com", password: "demopass" })
+      .then(() => { this.props.history.push("/channels/@me")})
+    }, 1000); 
   }
 
   // SWITCH TO LOGIN / SIGNUP
