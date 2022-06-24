@@ -85,55 +85,52 @@ export default class Splash extends React.Component {
 
         <footer>
           <div className="splash-footer-container">
-            <div className="splash-footer-column-1">
-              IMAGINE A PLACE
-              <a href="">Twitter</a>
-              <a href="">Instagram</a>
-              <a href="">Facebook</a>
-              <a href="">Youtube</a>
-            </div>
+            <div className="splash-footer-grid">
+              <div className="splash-footer-column-1">
+                IMAGINE A PLACE
+                <a href="">Twitter</a>
+                <a href="">Instagram</a>
+                <a href="">Facebook</a>
+                <a href="">Youtube</a>
+              </div>
 
-            <div className="splash-footer-column-2">
-              SEPARATOR
-            </div>
+              <div className="splash-footer-column-2">
+                Product
+                <a href="">Download</a>
+                <a href="">Nitro</a>
+                <a href="">Status</a>
+              </div>
 
-            <div className="splash-footer-column-3">
-              Product
-              <a href="">Download</a>
-              <a href="">Nitro</a>
-              <a href="">Status</a>
-            </div>
+              <div className="splash-footer-column-3">
+                Company
+                <a href="">About</a>
+                <a href="">Jobs</a>
+                <a href="">Branding</a>
+                <a href="">Newsroom</a>
+              </div>
 
-            <div className="splash-footer-column-4">
-              Company
-              <a href="">About</a>
-              <a href="">Jobs</a>
-              <a href="">Branding</a>
-              <a href="">Newsroom</a>
-            </div>
+              <div className="splash-footer-column-4">
+                Resources
+                <a href="">College</a>
+                <a href="">Support</a>
+                <a href="">Safety</a>
+                <a href="">Blog</a>
+                <a href="">Feedback</a>
+                <a href="">Developers</a>
+                <a href="">StreamKit</a>
+              </div>
 
-            <div className="splash-footer-column-5">
-              Resources
-              <a href="">College</a>
-              <a href="">Support</a>
-              <a href="">Safety</a>
-              <a href="">Blog</a>
-              <a href="">Feedback</a>
-              <a href="">Developers</a>
-              <a href="">StreamKit</a>
+              <div className="splash-footer-column-5">
+                Policies
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Cookie Settings</a>
+                <a href="">Guidelines</a>
+                <a href="">Acknowledgements</a>
+                <a href="">Licenses</a>
+                <a href="">Moderation</a>
+              </div>
             </div>
-
-            <div className="splash-footer-column-6">
-              Policies
-              <a href="">Terms</a>
-              <a href="">Privacy</a>
-              <a href="">Cookie Settings</a>
-              <a href="">Guidelines</a>
-              <a href="">Acknowledgements</a>
-              <a href="">Licenses</a>
-              <a href="">Moderation</a>
-            </div>
-
             <nav className="splash-footer-wrapper">
               <div className="splash-footer-logo">
                 Thiscord
