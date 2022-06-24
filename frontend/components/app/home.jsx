@@ -28,4 +28,8 @@ const mSTP = state => ({
   currentUserId: state.session.id
 });
 
-export default connect(mSTP)(Home);
+const mDTP = dispatch => ([
+  
+]);
+
+export default connect(mSTP, mDTP)(Home);

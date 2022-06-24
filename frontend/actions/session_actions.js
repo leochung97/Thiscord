@@ -11,7 +11,7 @@ export const receiveCurrentUser = currentUser => ({
 });
 
 export const logoutCurrentUser = () => ({
-  type: LOGOUT_CURRENT_USER,
+  type: LOGOUT_CURRENT_USER
 });
 
 export const receiveErrors = errors => ({
@@ -42,5 +42,5 @@ export const logout = () => dispatch => (
 );
 
 export const clearSessionErrors = () => ({
-  type: CLEAR_SESSION_ERRORS,
+  type: CLEAR_SESSION_ERRORS
 });
