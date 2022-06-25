@@ -52,5 +52,4 @@ class Api::ServersController < ApplicationController
     current_user.server_index << @server.id
     current_user.save!
   end
-
 end

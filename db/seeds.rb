@@ -7,5 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-demo = User.new(username: "demouser", email: "demo@demo.com", password: "demopass")
-demo.save!
+Server.destroy_all
+demouser = User.create!(username: "demouser", email: "demo@demo.com", password: "demopass")
+stephen = User.create!(username: "mybrudda", email: "brudda@brudda.com", password: "bruddapass")
+leo = User.create!(username: "youngerbrudda", email: "broman@brudda.com", password: "bruddapass")
+
+demoserver = Server.create!(admin_id: 1, server_name: "demoserver", path: "/1")
+stephenserver = Server.create!(admin_id: 2, server_name: "serverforbruddas", path: "/2")
+demouser.servers << demoserver
+demouser.servers << stephenserver
