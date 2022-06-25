@@ -1,3 +1,4 @@
+
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,14 +8,21 @@ import { fetchServers } from "../../../actions/server_actions";
 class Servers extends React.Component {
   constructor(props){
     super(props);
+    this.state = { modal: false };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchServers(this.props.currentUserId);
   }
 
-  componentDidUpdate() {
-    
+  openModal() {
+    this.setState({ modal: true });
+  }
+
+  closeModal() {
+    this.setState({ modal: false });
   }
 
   handleClick(e) {
@@ -27,7 +35,6 @@ class Servers extends React.Component {
     return (
       <div className="servers-container">
         <Link to="/channels/@me" className="servers-home-button">Home</Link>
-
         <ul>
           {
             servers.map(server => 
@@ -35,8 +42,9 @@ class Servers extends React.Component {
             )
           }
         </ul>
-
-        <button onClick={this.handleClick}>Add a Server</button>
+        <div className="servers-create-container">
+          <button className="servers-create-button" onClick={this.handleClick}>Add a Server</button>
+        </div>
       </div>
     )
   }
@@ -50,6 +58,6 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
   logout: () => dispatch(logout()),
   fetchServers: userId => dispatch(fetchServers(userId)),
-})
+});
 
 export default connect(mSTP, mDTP)(Servers);

@@ -1,5 +1,5 @@
 json.server do
-  json.partial! "api/servers/server", server: server
+  json.partial! "api/servers/server", server: @server
 end
 
 json.users do

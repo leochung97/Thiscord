@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
 
   def create
     @server = Server.new(server_params)
-    @server.admin = current_user.id
+    @server.admin = current_user
 
     if @server.save
       @server_memberships = Server
@@ -45,7 +45,7 @@ class Api::ServersController < ApplicationController
   private
 
   def server_params
-    params.require(:server).permit(:server_name)
+    params.require(:server).permit(:server_name, :path)
   end
 
   def add_self_as_member

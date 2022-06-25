@@ -6,7 +6,7 @@ const serversReducer = (state = [], action) => {
   let newState = [...state];
   switch (action.type) {
     case RECEIVE_SERVER:
-      newState.push(action.server)
+      newState.push(action.server.server);
       return newState;
     case RECEIVE_SERVERS:
       return action.servers;
