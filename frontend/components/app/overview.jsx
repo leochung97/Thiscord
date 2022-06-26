@@ -10,6 +10,9 @@ export default class Overview extends React.Component {
         <div className="servers-wrapper">
           <Servers />
         </div>
+        <div className="channels-wrapper">
+          {/* <Channels /> */}
+        </div>
         <Switch>
           <Route path="/channels/@me" component={Home} />
         </Switch>

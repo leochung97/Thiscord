@@ -6,12 +6,12 @@ const serversReducer = (state = [], action) => {
   let newState = [...state];
   switch (action.type) {
     case RECEIVE_SERVER:
-      newState.push(action.server.server);
+      newState.push(action.server);
       return newState;
     case RECEIVE_SERVERS:
       return action.servers;
     case REMOVE_SERVER:
-      return newState.filter(server => server.id != action.server.id)
+      return newState.filter(server => server.id != action.serverId)
     case LOGOUT_CURRENT_USER:
       return [];
     default:

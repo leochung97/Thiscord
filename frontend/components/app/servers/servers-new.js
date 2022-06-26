@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
-import { fetchServers, createServer } from "../../../actions/server_actions";
+import { fetchServers, createServer, deleteServer } from "../../../actions/server_actions";
 
 export default function Servers() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,7 @@ export default function Servers() {
     state => state.entities.servers,
     (oldState, newState) => oldState.length === newState.length
   );
+  
   const userId = useSelector(state => state.session.id);
   const dispatch = useDispatch();
 
@@ -33,7 +34,12 @@ export default function Servers() {
     <ul>
       {
         servers.map(server =>
-          <li key={server.id}>{server.server_name}</li>
+          <div>
+            <li onClick={setIsOpen} key={server.id}>
+              {server.server_name}
+            </li>
+            
+          </div>  
         )
       }
     </ul>

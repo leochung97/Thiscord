@@ -2,17 +2,17 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @servers = Server.all
+    @servers = current_user.servers
     render :index
   end
 
   def show
-    @server = Server.find(params[:id])
+    @server = current_user.servers.find(params[:id])
 
     if @server
       render :show
     else
-      render json: ["Invalid server ID."], status: 404
+      render json: ["You're not a part of this server!"], status: 404
     end
   end
 
@@ -21,7 +21,7 @@ class Api::ServersController < ApplicationController
     @server.admin = current_user
 
     if @server.save
-      @server_memberships = Server
+      add_self_as_member
       render :show
     else
       render json: @server.errors.full_messages, status: 422
@@ -30,26 +30,26 @@ class Api::ServersController < ApplicationController
 
   def update
     @server = Server.find(params[:id])
+    if @server.update(server_params)
+      render :show
+    else
+      render json: @server.errors.full_messages, status: 422
+    end
   end
 
   def destroy
     @server = Server.find(params[:id])
-    if @server.admin = current_user
-      server.destroy
-      render :index
-    else
-      render json: ["You do not own this server!"], status: 422
-    end
+    @server.destroy;
   end
 
   private
 
   def server_params
-    params.require(:server).permit(:server_name, :path)
+    params.require(:server).permit(:server_name)
   end
 
   def add_self_as_member
-    current_user.server_index << @server.id
+    current_user.servers << @server
     current_user.save!
   end
 end

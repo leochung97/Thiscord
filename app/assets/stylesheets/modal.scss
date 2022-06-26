@@ -1,0 +1,21 @@
+.server-modal {
+  background: hsl(0, 1, 0%);
+  opacity: 0.85;
+  width: 100%;
+  height: 100%;
+}
+
+.create-server-modal {
+  opacity: 1;
+  display: block;
+  flex-direction: column;
+  backface-visibility: hidden;
+  width: 440px;
+  height: 404px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
