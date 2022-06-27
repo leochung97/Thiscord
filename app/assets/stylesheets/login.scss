@@ -50,10 +50,10 @@
 
 .session-input-forgot {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   font-weight: 200;
-  margin: -16px auto 20px auto;
+  margin: -12px auto 20px auto;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -72,7 +72,13 @@
   font-family: var(--font-primary);
   font-weight: 400;
   color: #fff;
-  background-color: hsl(235, 85.6%, 64.7%)
+  background-color: hsl(235, 85.6%, 64.7%);
+  transition: background-color .17s ease, color .17s ease;
+  transition-property: background-color;
+}
+
+.session-input-button-container > input:hover {
+  background-color: hsl(235, 51.4%, 52.4%);
 }
 
 .session-form-welcome {
@@ -162,7 +168,7 @@
 }
 
 .session-need-account > span {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   text-align: left;
   color: #72767d;
@@ -171,7 +177,7 @@
 }
 
 .session-need-account > button {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   font-weight: 200;
   margin: -16px auto 20px auto;

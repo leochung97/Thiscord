@@ -81,7 +81,7 @@ header {
   margin-right: 40px;
   padding: 7px 16px;
   line-height: 24px;
-  transition-property: color, -webkit-box-shadow;
+  transition-property: color;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
 }
@@ -230,8 +230,8 @@ section > div {
   gap: 0 20px;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity .6s .1s, transform .6s ease, -webkit-transform .6s ease;
-  transition-property: opacity, transform, -webkit-transform;
+  transition: opacity .6s .1s, transform .6s ease;
+  transition-property: opacity, transform;
 }
 
 section > div > img {
@@ -302,20 +302,10 @@ section > div > div > h3 {
 }
 
 .splash-content-image-4 {
-  margin-top: 16px;
+  margin: 16px auto 0 auto;
   grid-column: span 12;
   object-fit: cover;
   width: 100%;
-}
-
-.splash-content-grid-5 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  height: 300px;
 }
 
 .splash-content-grid-5 {
@@ -323,6 +313,8 @@ section > div > div > h3 {
   margin: 0 0 0 0;
   width: 100%;
   display: flex;
+  position: relative;
+  height: 300px;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
@@ -332,8 +324,7 @@ section > div > div > h3 {
 }
 
 .splash-content-ready-container {
-  margin-top: 0px;
-  margin-bottom: 120px;
+  margin: 0 auto 120px auto;
   padding: 0 40px 0 40px;
   position: relative;
 }
@@ -360,17 +351,17 @@ section > div > div > h3 {
   font-size: 20px;
   color: white;
   background-color: #5865f2;
-  margin-top: 40px;
+  margin: 40px auto 0 auto;
   width: auto;
   border-radius: 28px;
   padding: 16px 32px;
   line-height: 24px;
-  transition-property: background-color, -webkit-box-shadow;
+  transition-property: background-color;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
   position: absolute;
-  left: 25%;
   top: 60px;
+  left: 32.5%;
 }
 
 .splash-ready-button:hover {

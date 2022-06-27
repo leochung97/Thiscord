@@ -155,22 +155,20 @@ export default class SessionForm extends React.Component {
             :
 
             <div className="session-signup-form">
-              <label>
-                EMAIL
+              <div className="session-signup-container">
+                <h1>Create an account</h1>
+                <label>EMAIL</label>
                 <input required type='email' onChange={this.update('email')} className="session-input email" />
-              </label>
-              <br />
-              <label>
-                USERNAME
+                <label>USERNAME</label>
                 <input required type='text' onChange={this.update('username')} className="session-input username" />
-              </label>
-              <br />
-              <label>
-                PASSWORD
+                <label>PASSWORD</label>
                 <input required type='password' onChange={this.update('password')} className="session-input password" />
-              </label>
-              <br />
-              <input type='submit' value="Continue" className="session-sign-button" />
+                <div className="session-signup-buttons-container">
+                  <input type='submit' value="Continue" className="session-sign-button" />
+                </div>
+                <button onClick={this.loginForm}>Already have an account?</button>
+                <p>By registering, you agree to Thiscord's <a>Terms of Service</a> and <a>Privacy Policy</a></p>
+              </div>
             </div>
           }
           
