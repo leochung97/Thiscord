@@ -387,8 +387,8 @@ footer {
 
 .splash-footer-container {
   color: #5865f2;
-  padding-top: 80px;
-  padding-bottom: 64px;
+  padding-top: 40px;
+  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -401,38 +401,26 @@ footer {
   grid-auto-flow: column;
   gap: 0 20px;
   box-sizing: border-box;
-  padding: 0 40px 0 40px;
 }
 
-.splash-footer-column-1 {
-  grid-column: span 3;
-  grid-row-end: span 2;
-}
-
-.splash-footer-grid > div:nth-child(n+2) {
-  font-size: 16px;
+.splash-footer-motto {
+  font-size: 32px;
   line-height: 24px;
   padding-top: 8px;
   display: block;
-  font-weight: 400;
+  font-weight: 800;
   font-family: var(--font-primary);
   grid-column: span 2;
-  margin-bottom: 40px;
-}
-
-.splash-footer-grid > div > a:link {
-  color: white;
-  text-decoration: none;
-}
-
-.splash-footer-grid > div > a:visited {
-  color: white;
-  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .splash-footer-logo {
   font-family: var(--font-glitch);
   font-weight: 800;
-  margin-left: 40px;
   font-size: 20px;
+}
+
+.splash-footer-links {
+  display: flex;
+  flex-direction: row;
 }

@@ -23,7 +23,6 @@ export default class Splash extends React.Component {
             <Link to={this.props.loggedIn ? "/channels/@me" : "/login"} className="splash-header-login-button">
               {this.props.loggedIn ? "Open Thiscord" : "Login"}
             </Link>
-            {this.props.loggedIn ? <button onClick={this.props.logout}>Logout</button> : ""}
           </nav>
 
           <div className="splash-header-content">
@@ -86,61 +85,18 @@ export default class Splash extends React.Component {
         <footer>
           <div className="splash-footer-container">
             <div className="splash-footer-grid">
-              <div className="splash-footer-column-1">
-                IMAGINE A PLACE
-                <a href="">Twitter</a>
-                <a href="">Instagram</a>
-                <a href="">Facebook</a>
-                <a href="">Youtube</a>
-              </div>
-
-              <div className="splash-footer-column-2">
-                Product
-                <a href="">Download</a>
-                <a href="">Nitro</a>
-                <a href="">Status</a>
-              </div>
-
-              <div className="splash-footer-column-3">
-                Company
-                <a href="">About</a>
-                <a href="">Jobs</a>
-                <a href="">Branding</a>
-                <a href="">Newsroom</a>
-              </div>
-
-              <div className="splash-footer-column-4">
-                Resources
-                <a href="">College</a>
-                <a href="">Support</a>
-                <a href="">Safety</a>
-                <a href="">Blog</a>
-                <a href="">Feedback</a>
-                <a href="">Developers</a>
-                <a href="">StreamKit</a>
-              </div>
-
-              <div className="splash-footer-column-5">
-                Policies
-                <a href="">Terms</a>
-                <a href="">Privacy</a>
-                <a href="">Cookie Settings</a>
-                <a href="">Guidelines</a>
-                <a href="">Acknowledgements</a>
-                <a href="">Licenses</a>
-                <a href="">Moderation</a>
+              <div className="splash-footer-motto">
+                CREATOR LINKS
               </div>
             </div>
-            <nav className="splash-footer-wrapper">
-              <div className="splash-footer-logo">
-                Thiscord
+            <div className="splash-footer-links">
+              <div className="LinkedIn">
+                <a href="https://www.linkedin.com/in/swchung/"><img src="https://thiscord-assets.s3.amazonaws.com/icons8-linkedin-100.png" alt="LinkedIn Profile" /></a>
               </div>
-              <div className="splash-footer-login-button">
-                <Link to={this.props.loggedIn ? "/channels/@me" : "/login"} className="splash-login-button">
-                  {this.props.loggedIn ? "Open Thiscord" : "Login"}
-                </Link>
+              <div className="GitHub">
+                <a href="https://github.com/leochung97"><img src="https://thiscord-assets.s3.amazonaws.com/icons8-github-100.png" alt="GitHub Profile" /></a>
               </div>
-            </nav>
+            </div>
           </div>
         </footer>
       </div>

@@ -12,12 +12,67 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  max-height: 408px;
 }
 
 .session-login-container {
   flex-direction: column;
   flex-grow: 1;
-  align-items: start;
+  align-items: center;
+  width: 440px;
+}
+
+.session-input-block {
+  color: #72767d;
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.session-input-block > label {
+  margin-bottom: 8px;
+}
+
+.session-input-block > input {
+  margin-bottom: 20px;
+  height: 35px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #dcddde;
+  background-color: #202225;
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+.session-input-forgot {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 200;
+  margin: -16px auto 20px auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: hsl(197, 100%, 47.8%);
+}
+
+.session-input-button-container > input {
+  margin: 5px 0 5px 0;
+  text-align: center;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  color: #fff;
+  background-color: hsl(235, 85.6%, 64.7%)
 }
 
 .session-form-welcome {
@@ -61,14 +116,68 @@
 }
 
 .session-qr-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  max-width: 240px;
 }
 
 .session-qr-img {
   width: 176px;
   height: 176px;
+  margin-bottom: 20px;
+}
+
+.session-qr-login {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 30px;
+  display: block; 
+  text-align: center;
+}
+
+.session-qr-instruction {
+  color: #b9bbbe;
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.session-qr-instruction > strong {
+  font-weight: 600;
 }
 
 .session-qr-container {
   width: 240px;
+}
+
+.session-need-account {
+  height: 20px;
+}
+
+.session-need-account > span {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  color: #72767d;
+  font-weight: 200;
+  margin-right: 4px;
+}
+
+.session-need-account > button {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 200;
+  margin: -16px auto 20px auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: hsl(197, 100%, 47.8%);
+  background-color: transparent;
 }

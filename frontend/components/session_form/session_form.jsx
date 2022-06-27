@@ -65,13 +65,14 @@ export default class SessionForm extends React.Component {
   formSwitcher() {
     if (this.props.formType === "login") {
       return (
-        <p>
-          Need an account? <button onClick={this.signupForm}>Register</button>
+        <p className="session-need-account">
+          <span>Need an account?</span>
+          <button onClick={this.signupForm}>Register</button>
         </p>
       )
     } else if (this.props.formType === "signup") {
       return (
-        <p>
+        <p className="session-already-account">
           <button onClick={this.loginForm}>Already have an account?</button>
         </p>
       )
@@ -129,15 +130,17 @@ export default class SessionForm extends React.Component {
                 <div className="session-input-block">
                   <label>
                     EMAIL OR PHONE NUMBER
-                    <input required type='email' onChange={this.update('email')} className="session-input email" />
                   </label>
+                  <input required type='email' onChange={this.update('email')} className="session-input email" />
                   <label>
                     PASSWORD
-                    <input required type='password' onChange={this.update('password')} className="session-input password" />
                   </label>
+                  <input required type='password' onChange={this.update('password')} className="session-input password" />
                   <a href="#" className="session-input-forgot">Forgot your password?</a>
-                  <button onClick={this.demoLogin} className="session-demo-button">Use Demo Credentials</button>
-                  <input type='submit' value="Login" className="session-login-button" />
+                  <div className="session-input-button-container">
+                    <input type='submit' value="Login" className="session-login-button" />
+                    <input onClick={this.demoLogin} value="Use Demo Credentials" className="session-demo-button" />
+                  </div>
                   {this.formSwitcher()}
                 </div>
               </div>
