@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_192139) do
+ActiveRecord::Schema.define(version: 2022_06_27_003526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 2022_06_25_192139) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "channels", force: :cascade do |t|
+    t.string "channel_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "admin_id", null: false
+  end
+
   create_table "server_channels", force: :cascade do |t|
     t.integer "server_id", null: false
     t.integer "channel_id", null: false
@@ -61,13 +68,6 @@ ActiveRecord::Schema.define(version: 2022_06_25_192139) do
   create_table "servers", force: :cascade do |t|
     t.integer "admin_id", null: false
     t.string "server_name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "text_channels", force: :cascade do |t|
-    t.string "channel_name", null: false
-    t.string "path", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
