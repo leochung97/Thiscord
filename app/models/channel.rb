@@ -6,20 +6,17 @@
 #  channel_name :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  admin_id     :integer          not null
+#  server_id    :integer          not null
 #
 class Channel < ApplicationRecord
-  validates :admin_id, :server_name, presence: true
+  validates :channel_name, :server_id, presence: true
+  validates :channel_name, uniqueness: { scope: :server_id }
 
-  belongs_to :admin,
-    foreign_key: :admin_id,
-    class_name: :User
+  belongs_to :server,
+    foreign_key: :server_id,
+    class_name: :Server
 
-  has_many :servers_partof,
+  has_many :messages,
     foreign_key: :channel_id,
-    class_name: :ServerChannel
-
-  has_many :servers,
-    through: :servers_partof,
-    source: :server
+    class_name: :ChannelMessage
 end

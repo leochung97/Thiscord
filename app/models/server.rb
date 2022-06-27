@@ -23,11 +23,12 @@ class Server < ApplicationRecord
     through: :memberships,
     source: :member
 
-  has_many :server_channels,
-    foreign_key: :server_id,
-    class_name: :server_id
-
   has_many :channels,
-    through: :server_channels,
-    source: :channel
+    foreign_key: :server_id,
+    class_name: :Channel,
+    dependent: :destroy
+
+  has_many :messages,
+    through: :channels,
+    source: :messages
 end

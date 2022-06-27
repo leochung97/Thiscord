@@ -8,12 +8,7 @@ export default class Overview extends React.Component {
   render() {
     return (
       <div className="overview-wrapper">
-        <div className="servers-wrapper">
-          <Servers />
-        </div>
-        <div className="channels-wrapper">
-          <Channels />
-        </div>
+        <Servers />
         <Switch>
           <Route exact path="/channels/@me" component={Home} />
         </Switch>

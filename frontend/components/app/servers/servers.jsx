@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
 import { fetchServers, createServer, deleteServer } from "../../../actions/server_actions";
 import ServerModal from "./server_modal";
+import Channels from "../channels/channel"
 
 class Servers extends React.Component {
   constructor(props) {
@@ -51,31 +52,36 @@ class Servers extends React.Component {
     const { servers } = this.props;
 
     return (
-      <div className="servers-container">
-        <Link to="/channels/@me" className="servers-home-button">Home</Link>
-        <ul>
-          {
-            servers.map(server =>
-              <li key={server.id}>
-                <Link to={`/channels/${server.id}`}>{server.server_name}</Link>
-                <button onClick={() => this.handleRemoveServer(server.id)}>DELETE</button>
-              </li>
-            )
-          }
-        </ul>
-        <div className="servers-create-container">
-          <button className="servers-create-button" onClick={this.handleAddServer}>Add a Server</button>
+      <div className="overview-container">
+        <div className="servers-container">
+          <Link to="/channels/@me" className="servers-home-button">Home</Link>
+          <ul>
+            {
+              servers.map(server =>
+                <li key={server.id}>
+                  <Link to={`/channels/${server.id}`}>{server.server_name}</Link>
+                  <button onClick={() => this.handleRemoveServer(server.id)}>DELETE</button>
+                </li>
+              )
+            }
+          </ul>
+          <div className="servers-create-container">
+            <button className="servers-create-button" onClick={this.handleAddServer}>Add a Server</button>
+          </div>
+          <div className="servers-logout-button" onClick={this.props.logout}>
+            <button>
+              Logout
+            </button>
+          </div>
+          <button onClick={this.openModal}>OPEN MODAL</button>
+          <ServerModal
+            isOpen={this.state.IsOpen}
+            closeModal={this.closeModal}
+          />
         </div>
-        <div className="servers-logout-button" onClick={this.props.logout}>
-          <button>
-            Logout
-          </button>
+        <div className="channels-container">
+          <Channels />
         </div>
-        <button onClick={this.openModal}>OPEN MODAL</button>
-        <ServerModal
-          isOpen={this.state.IsOpen}
-          closeModal={this.closeModal}
-        />
       </div>
     )
   }

@@ -16,7 +16,8 @@ class Channels extends React.Component {
 
   handleAddChannel() {
     this.props.createChannel({
-      channel_name: "new channel test"
+      channel_name: "new test",
+      server_id: 1
     })
   }
 
@@ -24,7 +25,6 @@ class Channels extends React.Component {
     const { channels } = this.props;
     return (
       <div>
-        THIS IS BEING RETURNED AS CHANNELS
         <ul>
           {
             channels.map(channel =>
@@ -55,3 +55,5 @@ const mDTP = dispatch => ({
 });
 
 export default withRouter(connect(mSTP, mDTP)(Channels));
+
+// NTD: Need to make it so that channels automatically pop up when server is clicked, currently does not load

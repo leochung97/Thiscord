@@ -11,6 +11,11 @@
 #                           PATCH  /api/servers/:id(.:format)                                                               api/servers#update {:format=>:json}
 #                           PUT    /api/servers/:id(.:format)                                                               api/servers#update {:format=>:json}
 #                           DELETE /api/servers/:id(.:format)                                                               api/servers#destroy {:format=>:json}
+#              api_channels GET    /api/channels(.:format)                                                                  api/channels#show {:format=>:json}
+#                           PATCH  /api/channels(.:format)                                                                  api/channels#update {:format=>:json}
+#                           PUT    /api/channels(.:format)                                                                  api/channels#update {:format=>:json}
+#                           DELETE /api/channels(.:format)                                                                  api/channels#destroy {:format=>:json}
+#                           POST   /api/channels(.:format)                                                                  api/channels#create {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
@@ -24,6 +29,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :user, only: [:create, :index, :show, :update]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
+    resource :channels, only: [:show, :create, :update, :destroy]
     
     resource :session, only: [:create, :destroy]
   end
