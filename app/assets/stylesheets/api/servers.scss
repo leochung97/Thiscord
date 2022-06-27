@@ -1,3 +1,60 @@
 // Place all the styles related to the api/servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.server-wrapper {
+  display: flex;
+  height: 100%;
+  width: 72px;
+  background-color: #202225;
+  color: #f6f6f6;
+  padding: 12px 0 0 0;
+  position: relative;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.servers-container {
+  display: flex;
+}
+
+.servers-container > ul > li {
+  margin: 0 0 8px 0;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #36393f;
+  transition: background-color .15s ease-out, color .15s ease-out, border-radius .15s ease-in-out;
+  transition-property: background-color, border-radius;
+  color: #dcddde;
+}
+
+.servers-container > ul > li:hover {
+  background-color: hsl(235, 85.6%, 64.7%);
+  border-radius: 32.5%;
+  text-decoration: none;
+}
+
+.servers-home-button {
+  color: #fff;
+  background: transparent;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.servers-separator {
+  margin: 0 auto 8px auto;
+  height: 2px;
+  width: 32px;
+  border-radius: 1px;
+  background-color: rgba(79, 84, 92, 0.48);
+}

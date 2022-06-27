@@ -8,7 +8,15 @@
   left: 0px;
 }
 
-.servers-container {
-  background-color: #202225;
-  color: #f6f6f6;
+.overview-container {
+  z-index: 1;
+}
+
+.home-wrapper {
+  z-index: 2;
+}
+
+.channels-wrapper {
+  overflow-y: none;
+  height: calc(100vh - 175px);
 }

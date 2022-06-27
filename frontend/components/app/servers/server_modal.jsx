@@ -15,7 +15,7 @@ class ServerModal extends React.Component {
         className="server-modal"
         isOpen={this.props.isOpen}
         onRequestClose={this.props.closeModal}
-        closeTimeoutMS={500}
+        closeTimeoutMS={50}
         ariaHideApp={false}
       >
         <CreateServer 

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { fetchChannels, createChannel, deleteChannel } from "../../../actions/channel_actions";
+import { fetchChannel, createChannel, deleteChannel } from "../../../actions/channel_actions";
 
 class Channels extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Channels extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchChannels(this.props.serverId)
+    console.log("mounted");
   }
 
   handleAddChannel() {
@@ -23,37 +23,46 @@ class Channels extends React.Component {
 
   render() {
     const { channels } = this.props;
-    return (
-      <div>
-        <ul>
-          {
-            channels.map(channel =>
-              <li key={channel.id}>
-                <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}>${channel.channel_name}</Link>
-              </li>
-            )
-          }
-          <li>
-            <button className="channels-create-button" onClick={this.handleAddChannel}>Add a new channel</button>
-          </li>
-        </ul>
-      </div>
-    )
+    if (this.props.server) {
+      return (
+        <div className="sidebar-wrapper">
+          <h1>{this.props.server.server_name}</h1>
+          <div className="channels-wrapper">
+            <div className="channels">
+              <div className="channels-drop-container">
+                <div className="channels-drop">TEXT CHANNELS</div>
+                <button className="channels-create-button" onClick={this.handleAddChannel}>+</button>
+              </div>
+              <ul>
+                {
+                  channels.map(channel =>
+                    <div key={channel.id}>
+                      <li>
+                        <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}># ${channel.channel_name}</Link>
+                      </li>
+                    </div>
+                  )
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    }
   }
 }
 
-const mSTP = state => ({
+const mSTP = (state, ownProps) => ({
   currentUserId: state.session.id,
-  serverId: state.entities.servers,
-  channels: state.entities.channels
+  server: state.entities.servers[ownProps.match.params.serverId],
+  channels: state.entities.channels,
+  currentChannelId: ownProps.match.params.channelId
 });
 
 const mDTP = dispatch => ({
-  fetchChannels: serverId => dispatch(fetchChannels(serverId)),
+  fetchChannel: channelId => dispatch(fetchChannel(channelId)),
   createChannel: channel => dispatch(createChannel(channel)),
   deleteChannel: channelId => dispatch(deleteChannel(channelId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(Channels));
-
-// NTD: Need to make it so that channels automatically pop up when server is clicked, currently does not load

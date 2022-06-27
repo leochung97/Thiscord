@@ -19,3 +19,110 @@
   transform: translate(-50%, -50%);
   border-radius: 4px;
 }
+
+.create-server-header-container {
+  flex: 0 0 auto;
+  padding: 24px 24px 0;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.create-server-header-container > h1 {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 30px;
+  color: #060607;
+}
+
+.create-server-header-container > h3 {
+  margin-top: 8px;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4f5660;
+}
+
+.modal-form-container {
+  margin: 16px 0;
+  padding: 0 16px;
+}
+
+.modal-form-container > h3 {
+  color: #4f5660;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.modal-form > input {
+  background-color: #e3e5e8;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #2e3338;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.modal-form > div {
+  color: #5e6772;
+  padding-bottom: 4px;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.modal-form > div > a {
+  color: hsl(212, 100%, 43.9%);
+  text-decoration: none;
+}
+
+.modal-buttons-container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 150px;
+  background-color: transparent;
+}
+
+.create-server-exit {
+  display: flex;
+  height: auto;
+  color: #4f5660;
+  background-color: transparent;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  align-items: center;
+}
+
+.create-server-create {
+  color: #fff;
+  background-color: hsl(235, 85.6%, 64.7%);
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  transition: background-color .17s ease, color .17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+}

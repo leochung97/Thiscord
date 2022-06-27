@@ -37,15 +37,17 @@ class CreateServer extends React.Component {
             <h1>Customize your server</h1>
             <h3>Give your new server a personality with a name. You can always change it later.</h3>
           </div>
-          <h3>SERVER NAME</h3>
-          <form onSubmit={this.handleSubmit}>
-            <input className="create-server-input" type="text" onChange={this.update} value={this.state.server_name} placeholder={`Server Name`} />
-            <div>By creating a server, you agree to Thiscord's <a href="">Community Guidelines.</a></div>
-            <button type="submit">Create</button>
-          </form>
-          <button className="create-server-exit" onClick={this.props.closeModal}>
-            Back
-          </button>
+          <div className="modal-form-container">
+            <h3>SERVER NAME</h3>
+            <form onSubmit={this.handleSubmit} className="modal-form">
+              <input className="create-server-input" type="text" onChange={this.update} value={this.state.server_name} placeholder={`Server Name`} />
+              <div>By creating a server, you agree to Thiscord's <a href="">Community Guidelines.</a></div>
+              <div className="modal-buttons-container">
+                <button className="create-server-exit" onClick={this.props.closeModal}>Back</button>
+                <button className="create-server-create" type="submit">Create</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     )

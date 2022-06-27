@@ -1,20 +1,6 @@
-export const fetchServerUsers = serverId => (
-  $.ajax({
-    url: 'api/users',
-    data: { serverId }
-  })
-);
-
 export const fetchChannel = channelId => (
   $.ajax({
     url: `/api/channels/${channelId}`
-  })
-);
-
-export const fetchChannels = serverId => (
-  $.ajax({
-    url: 'api/channels',
-    data: { serverId }
   })
 );
 

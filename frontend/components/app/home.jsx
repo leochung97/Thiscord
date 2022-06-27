@@ -11,6 +11,7 @@ class Home extends React.Component {
         <div className="sidebar-wrapper">
           <SearchBar />
           <Messages />
+          
         </div>
         <div className="friends-wrapper">
           <Friends />
