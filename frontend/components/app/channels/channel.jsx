@@ -11,7 +11,7 @@ class Channels extends React.Component {
   }
 
   componentDidMount(){
-    console.log("mounted");
+    console.log(this.props);
   }
 
   handleAddChannel() {
@@ -37,7 +37,7 @@ class Channels extends React.Component {
                 {
                   channels.map(channel =>
                     <div key={channel.id}>
-                      <li>
+                      <li className="channels-list">
                         <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}># ${channel.channel_name}</Link>
                       </li>
                     </div>

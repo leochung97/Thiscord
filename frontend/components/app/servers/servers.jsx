@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
 import { fetchServers, createServer, deleteServer } from "../../../actions/server_actions";
 import ServerModal from "./server_modal";
-import Channels from "../channels/channel"
 
 class Servers extends React.Component {
   constructor(props) {
@@ -50,27 +49,25 @@ class Servers extends React.Component {
           <ul>
             <li>
               <div className="servers-home-button">
-                <Link to="/channels/@me" className="servers-home-button">Home</Link>
+                <Link to="/channels/@me" className="servers-home-button"><img src="https://thiscord-assets.s3.amazonaws.com/icon_clyde_white_RGB.svg" /></Link>
               </div>
             </li>
             <div className="servers-separator"></div>
             {
               servers.map(server =>
                 <li key={server.id}>
-                  <Link to={`/channels/${server.id}`}>{server.server_name}</Link>
+                  <Link to={`/channels/${server.id}`}>{server.server_name.slice(0,1).toUpperCase()}</Link>
                   {/* <button onClick={() => this.handleRemoveServer(server.id)}>DELETE</button> */}
                 </li>
               )
             }
-            <li>
-              <button onClick={this.openModal}>Add a Server</button>
+            <div className="servers-separator"></div>
+            <li className="modal-add-list" onClick={this.openModal}>
+              <button className="modal-button">+</button>
             </li>
-            <li>
-              <div className="servers-logout-button" onClick={this.props.logout}>
-                <button>
-                  Logout
-                </button>
-              </div>
+            <div className="servers-separator" ></div>
+            <li className="servers-logout-button" onClick={this.props.logout}>
+              <button>Logout</button>
             </li>
           </ul>
           <ServerModal

@@ -18,6 +18,7 @@
 
 .servers-container {
   display: flex;
+  color: #dcddde;
 }
 
 .servers-container > ul > li {
@@ -31,7 +32,7 @@
   background-color: #36393f;
   transition: background-color .15s ease-out, color .15s ease-out, border-radius .15s ease-in-out;
   transition-property: background-color, border-radius;
-  color: #dcddde;
+  color: #96989d;
 }
 
 .servers-container > ul > li:hover {
@@ -40,8 +41,29 @@
   text-decoration: none;
 }
 
+.servers-container > ul > li > a {
+  color: #96989d;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.servers-container > ul > li > a:hover {
+  text-decoration: none;
+}
+
+.servers-container > ul > li > button {
+  background-color: transparent;
+  color: #96989d;
+  display: flex;
+  align-items: center;
+}
+
+.servers-container > ul > li > button:hover {
+  text-decoration: none;
+}
+
 .servers-home-button {
-  color: #fff;
   background: transparent;
   display: flex;
   width: 48px;
@@ -51,10 +73,32 @@
   text-decoration: none;
 }
 
+.servers-home-button:hover {
+  text-decoration: none;
+}
+
+.servers-home-button > img {
+  width: 24px;
+  height: 24px;
+}
+
 .servers-separator {
   margin: 0 auto 8px auto;
   height: 2px;
   width: 32px;
   border-radius: 1px;
   background-color: rgba(79, 84, 92, 0.48);
+}
+
+.modal-button {
+  background-color: transparent;
+  font-size: 40px;
+  font-weight: 200;
+  color: #3ba55d;
+  transition: background-color .15s ease-out, color .15s ease-out, border-radius .15s ease-in-out;
+  transition-property: background-color, color, border-radius;
+}
+
+.modal-button:hover {
+  color: #fff;
 }
