@@ -30,9 +30,4 @@ const mSTP = state => ({
   currentUserId: state.session.id
 });
 
-// const mDTP = dispatch => ([
-  
-// ]);
-
-// Add back mDTP
 export default connect(mSTP)(Home);

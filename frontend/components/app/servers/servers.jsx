@@ -56,7 +56,7 @@ class Servers extends React.Component {
             {
               servers.map(server =>
                 <li key={server.id}>
-                  <Link to={`/channels/${server.id}`}>{server.server_name.slice(0,1).toUpperCase()}</Link>
+                  <Link to={`/channels/${server.id}`}>{server.server_name[0].toUpperCase()}</Link>
                   {/* <button onClick={() => this.handleRemoveServer(server.id)}>DELETE</button> */}
                 </li>
               )

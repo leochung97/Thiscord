@@ -1,4 +1,3 @@
 json.array! (@channels) do |channel|
-  json.id channel.id
-  json.channel_name channel.channel_name
+  json.partial! "api/channels/channel", channel: channel
 end
