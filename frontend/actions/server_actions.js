@@ -19,7 +19,7 @@ const receiveServers = servers => ({
 const removeServer = serverId => ({
   type: REMOVE_SERVER,
   serverId
-})
+});
 
 const receiveServerErrors = errors => ({
   type: RECEIVE_SERVER_ERRORS,

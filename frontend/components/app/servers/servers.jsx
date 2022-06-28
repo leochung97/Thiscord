@@ -65,7 +65,7 @@ class Servers extends React.Component {
             <li className="modal-add-list" onClick={this.openModal}>
               <button className="modal-button">+</button>
             </li>
-            <div className="servers-separator" ></div>
+            <div className="servers-separator"></div>
             <li className="servers-logout-button" onClick={this.props.logout}>
               <button>Logout</button>
             </li>

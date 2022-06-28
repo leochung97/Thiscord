@@ -43,6 +43,7 @@ class Channels extends React.Component {
                     </div>
                   )
                 }
+                {console.log(channels)}
               </ul>
             </div>
           </div>

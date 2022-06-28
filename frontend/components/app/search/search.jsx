@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="searchbar-container">
-        <h1>THIS IS WHERE YOUR SEARCHBAR WILL GO</h1>
+        <h1>Find or start a conversation</h1>
       </div>
     )
   }

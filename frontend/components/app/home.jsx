@@ -10,8 +10,13 @@ class Home extends React.Component {
       <div className="home-wrapper">
         <div className="sidebar-wrapper">
           <SearchBar />
+        </div>
+        <div className="friends-container">
+          <div></div>
+          <img></img><p>Friends</p>
+        </div>
+        <div className="messages-wrapper">
           <Messages />
-          
         </div>
         <div className="friends-wrapper">
           <Friends />

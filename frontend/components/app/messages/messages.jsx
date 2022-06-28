@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 class Messages extends React.Component {
   render() {
     return (
-      <div className="searchbar-container">
-        <h1>THIS IS WHERE YOUR MESSAGES WILL GO</h1>
+      <div className="messages-container">
+        <h1>DIRECT MESSAGES</h1>
       </div>
     )
   }
