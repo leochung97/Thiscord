@@ -115,3 +115,39 @@
 .modal-button:hover {
   color: #fff;
 }
+
+.members-list {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 4px;
+  height: 42px;
+  padding: 0 12px;
+  transition: background-color .15s ease-out, color .15s ease-out;
+  color: #96989d;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.members-list:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(79, 84, 92, 0.4);
+}
+
+.members-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  background-color: hsl(235, 85.6%, 64.7%);
+  border-radius: 100%;
+}
+
+.members-list > div > img {
+  width: 24px;
+  height: 24px;
+}

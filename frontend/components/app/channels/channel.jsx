@@ -29,7 +29,6 @@ class Channels extends React.Component {
 
   openEditModal() {
     this.setState({ IsOpen: false, IsEditOpen: true });
-    console.log(this.state)
   }
 
   closeEditModal() {
@@ -72,17 +71,23 @@ class Channels extends React.Component {
                 }
               </ul>
             </div>
-            <div className="sidebar-delete-server" onClick={this.openEditModal}>Edit Server</div>
+            <div className="sidebar-delete-server-container" onClick={this.openEditModal}>
+              <div className="sidebar-delete-server">Edit Server</div>
+              <img src="https://thiscord-assets.s3.amazonaws.com/icons8-settings-32.png" />
+            </div>
           </div>
-          <ChannelModal
-            isOpen={this.state.IsOpen}
-            closeModal={this.closeModal}
-          />
+
           <ServerEditModal
             isOpen={this.state.IsEditOpen}
             closeModal={this.closeEditModal}
             server={this.props.server}
           />
+
+          <ChannelModal
+            isOpen={this.state.IsOpen}
+            closeModal={this.closeModal}
+          />
+
         </div>
       )
     }

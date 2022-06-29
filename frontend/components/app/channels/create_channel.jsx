@@ -21,13 +21,12 @@ class CreateChannel extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
     this.props.createChannel({ 
       channel_name: this.state.channel_name,
       server_id: this.props.server.id
     }).then(({ channel }) => {
         this.props.closeModal();
-        this.props.history.push(`/${server.id}/${channel.id}`);
+        this.props.history.push(`/channels/${channel.server_id}/${channel.id}`);
       })
   }
 

@@ -78,3 +78,36 @@
   font-weight: 500;
   line-height: 20px;
 }
+
+.sidebar-delete-server-container {
+  bottom: 12px;
+  width: 224px;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-delete-server {
+  color: #96989d;
+  font-size: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  width: 100%;
+  transition: color .17s ease;
+}
+
+.sidebar-delete-server:hover {
+  color: #fff
+}
+
+.sidebar-delete-server-container > img {
+  width: 12px;
+  height: 12px;
+  filter: invert(62%) sepia(4%) saturate(342%) hue-rotate(185deg) brightness(98%) contrast(86%);
+  margin-right: 3px;
+}
+
+.sidebar-delete-server-container > img:hover {
+  filter: invert(97%) sepia(26%) saturate(46%) hue-rotate(294deg) brightness(119%) contrast(100%);
+}

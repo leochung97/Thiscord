@@ -11,7 +11,7 @@ class ChannelModal extends React.Component {
     return (
       <Modal
         className="server-modal"
-        isOpen={this.props.IsOpen}
+        isOpen={this.props.isOpen}
         onRequestClose={this.props.closeModal}
         closetimeoutMS={50}
         ariaHideApp={false}
