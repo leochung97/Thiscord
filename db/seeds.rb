@@ -8,11 +8,20 @@
 
 User.destroy_all
 Server.destroy_all
-demouser = User.create!(username: "demouser", email: "demo@demo.com", password: "demopass")
-stephen = User.create!(username: "mybrudda", email: "brudda@brudda.com", password: "bruddapass")
-leo = User.create!(username: "youngerbrudda", email: "broman@brudda.com", password: "bruddapass")
+Channel.destroy_all
 
-demoserver = Server.create!(admin_id: 1, server_name: "demoserver")
-stephenserver = Server.create!(admin_id: 2, server_name: "serverforbruddas")
-demouser.servers << demoserver
-demouser.servers << stephenserver
+demouser = User.create!(username: "demouser", email: "demo@demo.com", password: "demopass")
+kinKa = User.create!(username: "kinkaforta", email: "kinka@kinka.com", password: "kinkapass")
+ayce = User.create!(username: "ayceforta", email: "ayce@ayy.com", password: "aycepass")
+
+demoServer = Server.create!(admin_id: 1, server_name: "Circle Time")
+kinKaServer = Server.create!(admin_id: 2, server_name: "Kin Ka Attendance")
+ayceServer = Server.create!(admin_id: 3, server_name: "Ayce's Place")
+
+demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: 1)
+kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: 2)
+ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: 3)
+
+demouser.servers << demoServer
+kinKa.servers << kinKaServer
+ayce.servers << ayceServer

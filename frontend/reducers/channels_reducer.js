@@ -5,7 +5,7 @@ const channelsReducer = (state = [], action) => {
   let newState = [...state];
   switch (action.type) {
     case RECEIVE_CHANNEL:
-      newState.push(action.channel);
+      newState.push(action.channel)
       return newState;
     case RECEIVE_CHANNELS:
       return action.channels;

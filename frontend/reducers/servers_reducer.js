@@ -14,6 +14,8 @@ const serversReducer = (state = [], action) => {
     case REMOVE_SERVER:
       return newState.filter(server => server.id != action.serverId);
     case RECEIVE_CHANNEL:
+      console.log(state);
+      console.log(newState);
       let index = newState.findIndex(server => server.id === action.channel.server_id);
       newState[index].channels.push(action.channel);
       return newState;

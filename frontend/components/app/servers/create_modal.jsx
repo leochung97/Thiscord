@@ -23,7 +23,6 @@ class CreateServer extends React.Component {
     e.preventDefault();
     this.props.createServer({ server_name: this.state.server_name })
       .then(({ server }) => {
-        console.log(server);
         this.props.closeModal();
         this.props.history.push(`${server.id}`);
       })

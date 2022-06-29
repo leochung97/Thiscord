@@ -1,8 +1,8 @@
-import React from 'react';
-import Modal from 'react-modal';
-import CreateServer from "./create_modal";
+import React from "react";
+import Modal from "react-modal";
+import CreateChannel from "./create_channel";
 
-class ServerModal extends React.Component {
+class ChannelModal extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,10 +13,10 @@ class ServerModal extends React.Component {
         className="server-modal"
         isOpen={this.props.isOpen}
         onRequestClose={this.props.closeModal}
-        closeTimeoutMS={50}
+        closetimeoutMS={50}
         ariaHideApp={false}
       >
-        <CreateServer 
+        <CreateChannel
           closeModal={this.props.closeModal}
         />
       </Modal>
@@ -24,4 +24,4 @@ class ServerModal extends React.Component {
   }
 }
 
-export default ServerModal;
+export default ChannelModal;

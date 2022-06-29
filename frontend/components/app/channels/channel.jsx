@@ -3,23 +3,26 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { fetchChannel, fetchChannels, createChannel, deleteChannel } from "../../../actions/channel_actions";
+import ChannelModal from "./channel_modal";
 
 class Channels extends React.Component {
   constructor(props) {
     super(props);
-    this.handleAddChannel = this.handleAddChannel.bind(this);
+    this.state = { IsOpen: false };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  handleAddChannel() {
-    this.props.createChannel({
-      channel_name: "new test",
-      server_id: 1
-    })
+  openModal() {
+    this.setState({ IsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ IsOpen: false });
   }
 
   render() {
     const { server } = this.props;
-    console.log(this.props);
 
     if (this.props.server) {
       return (
@@ -29,14 +32,16 @@ class Channels extends React.Component {
             <div className="channels">
               <div className="channels-drop-container">
                 <div className="channels-drop">TEXT CHANNELS</div>
-                <button className="channels-create-button" onClick={this.handleAddChannel}>+</button>
+                <button className="channels-create-button" onClick={this.openModal}>+</button>
               </div>
               <ul>
                 {
                   server.channels.map(channel =>
                     <div key={channel.id}>
                       <li className="channels-list">
-                        <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}># ${channel.channel_name}</Link>
+                        <img src="https://thiscord-assets.s3.amazonaws.com/icons8-hashtag-large-48.png" />
+                        <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}>{channel.channel_name}</Link>
+                        <img src="https://thiscord-assets.s3.amazonaws.com/icons8-settings-32.png" />
                       </li>
                     </div>
                   )
@@ -44,6 +49,10 @@ class Channels extends React.Component {
               </ul>
             </div>
           </div>
+          <ChannelModal
+            isOpen={this.state.IsOpen}
+            closeModal={this.closeModal}
+          />
         </div>
       )
     }
@@ -53,6 +62,7 @@ class Channels extends React.Component {
 const mSTP = (state, ownProps) => ({
   currentUserId: state.session.id,
   server: state.entities.servers.find(server => server.id === parseInt(ownProps.match.params.serverId)),
+  channels: state.entities.channels,
   currentChannelId: ownProps.match.params.channelId
 });
 

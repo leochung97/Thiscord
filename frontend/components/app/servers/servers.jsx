@@ -18,10 +18,6 @@ class Servers extends React.Component {
     this.props.fetchServers(this.props.currentUserId);
   }
 
-  componentDidUpdate() {
-    
-  }
-
   update(field) {
     return (e) => {
       this.setState({ [field]: e.target.value })
