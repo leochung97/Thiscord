@@ -3,22 +3,45 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { fetchChannel, fetchChannels, createChannel, deleteChannel } from "../../../actions/channel_actions";
+import { deleteServer } from "../../../actions/server_actions";
 import ChannelModal from "./channel_modal";
+import ServerEditModal from "./server_edit_modal"
 
 class Channels extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { IsOpen: false };
+    this.state = { IsOpen: false, IsEditOpen: false };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openEditModal = this.openEditModal.bind(this);
+    this.closeEditModal = this.closeEditModal.bind(this);
+    this.removeChannel = this.removeChannel.bind(this);
+    this.removeServer = this.removeServer.bind(this);
   }
 
   openModal() {
-    this.setState({ IsOpen: true });
+    this.setState({ IsOpen: true, IsEditOpen: false });
   }
 
   closeModal() {
-    this.setState({ IsOpen: false });
+    this.setState({ IsOpen: false, IsEditOpen: false });
+  }
+
+  openEditModal() {
+    this.setState({ IsOpen: false, IsEditOpen: true });
+    console.log(this.state)
+  }
+
+  closeEditModal() {
+    this.setState({ IsOpen: false, IsEditOpen: false });
+  }
+
+  removeChannel(channelId) {
+    this.props.deleteChannel(channelId)
+  }
+
+  removeServer(serverId) {
+    this.props.deleteServer(serverId)
   }
 
   render() {
@@ -49,10 +72,16 @@ class Channels extends React.Component {
                 }
               </ul>
             </div>
+            <div className="sidebar-delete-server" onClick={this.openEditModal}>Edit Server</div>
           </div>
           <ChannelModal
             isOpen={this.state.IsOpen}
             closeModal={this.closeModal}
+          />
+          <ServerEditModal
+            isOpen={this.state.IsEditOpen}
+            closeModal={this.closeEditModal}
+            server={this.props.server}
           />
         </div>
       )
@@ -71,7 +100,8 @@ const mDTP = dispatch => ({
   fetchChannel: channelId => dispatch(fetchChannel(channelId)),
   fetchChannels: serverId => dispatch(fetchChannels(serverId)),
   createChannel: channel => dispatch(createChannel(channel)),
-  deleteChannel: channelId => dispatch(deleteChannel(channelId))
+  deleteChannel: channelId => dispatch(deleteChannel(channelId)),
+  deleteServer: serverId => dispatch(deleteServer(serverId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(Channels));

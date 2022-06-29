@@ -10,7 +10,28 @@ class ChannelMessages extends React.Component {
   render() {
     return (
       <div className="channel-messages-wrapper">
-        OMG!!!
+        <div className="channel-messages-header">
+          Header goes here
+        </div>
+        <div className="channel-messages-body">
+          <div className="channel-messages-container">
+            List of messages will go here
+            <div className="channel-messages-form-container">
+              <form className="channel-messages-form">
+                Input Bar
+                <img />
+                {/* <input className="channel-messages-input">Message #all-topics</input> */}
+                <img />
+                <img />
+                <img />
+                <img />
+              </form>
+            </div>
+          </div>
+          <div className="channel-users-container">
+            List of users will go here
+          </div>
+        </div>
       </div>
     )
   }
