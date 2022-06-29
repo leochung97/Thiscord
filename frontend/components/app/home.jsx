@@ -12,14 +12,11 @@ class Home extends React.Component {
           <SearchBar />
         </div>
         <div className="friends-container">
-          <div></div>
-          <img></img><p>Friends</p>
+          <img src="https://thiscord-assets.s3.amazonaws.com/icons8-complaint-30.png" />
+          <p>Friends</p>
         </div>
         <div className="messages-wrapper">
           <Messages />
-        </div>
-        <div className="friends-wrapper">
-          <Friends />
         </div>
       </div>
     )

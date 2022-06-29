@@ -6,6 +6,7 @@
   display: flex;
   height: 100%;
   width: 72px;
+  min-width: 72px;
   background-color: #202225;
   color: #f6f6f6;
   padding: 12px 0 0 0;
@@ -75,6 +76,18 @@
 
 .servers-home-button:hover {
   text-decoration: none;
+}
+
+.servers-logout-button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.servers-logout-button > img {
+  width: 32px;
+  height: 32px;
+  filter: invert(100%) sepia(3%) saturate(1247%) hue-rotate(175deg) brightness(91%) contrast(91%);
 }
 
 .servers-home-button > img {

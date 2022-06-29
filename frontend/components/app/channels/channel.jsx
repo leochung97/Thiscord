@@ -41,6 +41,7 @@ class Channels extends React.Component {
                       <li className="channels-list">
                         <img src="https://thiscord-assets.s3.amazonaws.com/icons8-hashtag-large-48.png" />
                         <Link to={`/channels/${this.props.match.params.serverId}/${channel.id}`}>{channel.channel_name}</Link>
+                        <img src="https://thiscord-assets.s3.amazonaws.com/icons8-add-user-group-man-man-24.png" />
                         <img src="https://thiscord-assets.s3.amazonaws.com/icons8-settings-32.png" />
                       </li>
                     </div>

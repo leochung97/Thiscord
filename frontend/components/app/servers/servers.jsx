@@ -63,7 +63,7 @@ class Servers extends React.Component {
             </li>
             <div className="servers-separator"></div>
             <li className="servers-logout-button" onClick={this.props.logout}>
-              <button>Logout</button>
+              <img src="https://thiscord-assets.s3.amazonaws.com/icons8-enter-30.png" />
             </li>
           </ul>
           <ServerModal
