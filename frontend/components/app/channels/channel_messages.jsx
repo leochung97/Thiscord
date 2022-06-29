@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
+import { fetchChannels } from "../../../actions/channel_actions";
 import { fetchServers } from "../../../actions/server_actions";
 import ChannelChat from "./channel_chat"
 
@@ -27,7 +28,7 @@ class ChannelMessages extends React.Component {
     return (
       <div className="channel-messages-wrapper">
         <div className="channel-messages-header">
-          Header goes here
+          
         </div>
         <div className="channel-messages-body">
           <div className="channel-messages-container">
@@ -36,9 +37,8 @@ class ChannelMessages extends React.Component {
             </Switch>
             <div className="channel-messages-form-container">
               <form className="channel-messages-form">
-                Input Bar
                 <img />
-                <input className="channel-messages-input">Message #all-topics</input>
+                {/* <input className="channel-messages-input">Message #all-topics</input> */}
                 <img />
                 <img />
                 <img />
@@ -72,10 +72,12 @@ class ChannelMessages extends React.Component {
 const mSTP = state => ({
   currentUserId: state.session.id,
   servers: state.entities.servers,
+  channels: state.entities.channels
 });
 
 const mDTP = dispatch => ({
   fetchServers: userId => dispatch(fetchServers(userId)),
+  fetchChannels: serverId => dispatch(fetchChannels(serverId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ChannelMessages));
