@@ -52,3 +52,15 @@
   width: 240px;
   min-width: 240px;
 }
+
+.channel-messages-header {
+  padding: 0 8px;
+}
+
+.channel-messages-header > svg {
+  padding: 0 8px;
+}
+
+.channel-messages-header > svg > path {
+  fill: #96989d;
+}
