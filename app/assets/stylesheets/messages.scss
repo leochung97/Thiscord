@@ -64,3 +64,21 @@
 .channel-messages-header > svg > path {
   fill: #96989d;
 }
+
+.chatroom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-list {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+.load-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

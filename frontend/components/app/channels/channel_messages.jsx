@@ -16,10 +16,6 @@ class ChannelMessages extends React.Component {
     this.props.fetchServers(this.props.currentUserId);
   }
 
-  componentDidUpdate() {
-    console.log(this.props);
-  }
-
   setBGColor() {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     return "#" + randomColor;
