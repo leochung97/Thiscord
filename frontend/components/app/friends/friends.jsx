@@ -26,13 +26,10 @@ class Friends extends React.Component {
 
         <div className="friends-wrapper-body">
           <div className="f-w-b-searchbar">
-            Searchbar goes in this container
           </div>
           <div className="f-w-b-online">
-            Online stuff goes here
           </div>
           <div className="f-w-b-friendslist">
-            List of friends go here
           </div>
         </div>
       </div>
