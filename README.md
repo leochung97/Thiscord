@@ -24,6 +24,9 @@ The name is intended to be a reference to JavaScript's **[this](https://develope
 - Server CRUD functionality (create, read, update, destroy)
 ![ServerCRUD](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/ServerCRUD.gif)
 
+- Text Channel Chatting
+![TypingTest](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/TypingTest.gif)
+
 ## Technologies
 
 **Backend:**
