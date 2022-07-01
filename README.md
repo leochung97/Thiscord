@@ -16,7 +16,7 @@ The name is intended to be a reference to JavaScript's **[this](https://develope
 
 ## Features
 
-
+![SplashPage](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/splash-page.png)
 
 ## Technologies
 
