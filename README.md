@@ -18,6 +18,12 @@ The name is intended to be a reference to JavaScript's **[this](https://develope
 
 ![SplashPage](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/splash-page.png)
 
+- User Sign-up / Login / Logout functionality with Demo User Login Feature
+![DemoLogin](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/demo-login.gif)
+
+- Server CRUD functionality (create, read, update, destroy)
+![ServerCRUD](https://github.com/leochung97/Thiscord/blob/main/app/assets/images/ServerCRUD.gif)
+
 ## Technologies
 
 **Backend:**
