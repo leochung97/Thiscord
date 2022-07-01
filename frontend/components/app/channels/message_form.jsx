@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class MessageForm extends React.Component {
   constructor(props) {
@@ -13,25 +15,34 @@ class MessageForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
+    App.cable.subscriptions.subscriptions[0].load();
     App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body });
     this.setState({ body: "" });
   }
-  
-  render() {
+
+  render() {    
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)} className="message-input-box">
           <input
             type="text"
             value={this.state.body}
             onChange={this.update("body")}
-            placeholder="Type message here"
+            placeholder="Message #"
           />
-          <input type="submit" />
+          <button type="submit"/>
         </form>
       </div>
     );
   }
 }
 
-export default MessageForm;
+const mSTP = state => ({
+  currentUserId: state.session.id,
+});
+
+const mDTP = dispatch => ({
+  
+});
+
+export default withRouter(connect(mSTP, mDTP)(MessageForm));

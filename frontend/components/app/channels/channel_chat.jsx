@@ -1,14 +1,13 @@
 import React from "react";
-import MessageForm from "./message_form.jsx";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { fetchChannel } from "../../../actions/channel_actions.js";
 
 class ChannelChat extends React.Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] };
     this.bottom = React.createRef();
+    this.loadChat = this.loadChat.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +30,7 @@ class ChannelChat extends React.Component {
         load: function() { return this.perform("load") }
       }
     );
+    App.cable.subscriptions.subscriptions[0].load();
   }
 
   loadChat(e) {
@@ -45,22 +45,23 @@ class ChannelChat extends React.Component {
   }
 
   render() {
-    const messageList = this.state.messages.map((message, idx) => {
-      return (
-        <li key={message.id}>
-          {message}
-          <div ref={this.bottom} />
-        </li>
-      );
-    });
+    const serverId = this.props.match.url.charAt(this.props.match.url.length - 1);
+    const server = this.props.servers.find(server => server.id === parseInt(serverId))
+    
     return (
       <div className="chatroom-container">
-        <button className="load-button"
-          onClick={this.loadChat.bind(this)}>
-          Load Chat History
-        </button>
-        <div className="message-list">{messageList}</div>
-        <MessageForm />
+        <div className="message-list">
+          {
+            this.state.messages.map((message, idx) => 
+              <li key={message.id}>
+                <div className="user-avatar-container">
+                  <img src="https://thiscord-assets.s3.amazonaws.com/icon_clyde_white_RGB.svg" />
+                </div>
+                {message}
+                <div ref={this.bottom} />
+              </li>
+          )}
+        </div>
       </div>
     );
   }
@@ -68,12 +69,13 @@ class ChannelChat extends React.Component {
 
 const mSTP = (state, ownProps) => ({
   currentUserId: state.session.id,
+  servers: state.entities.servers,
   channels: state.entities.channels,
-  currentChannelId: ownProps.match.params.channelId
+  currentChannelId: parseInt(ownProps.match.params.channelId)
 });
 
 const mDTP = dispatch => ({
-  fetchChannel: channelId => dispatch(fetchChannel(channelId)),
+
 });
 
 export default withRouter(connect(mSTP, mDTP)(ChannelChat));

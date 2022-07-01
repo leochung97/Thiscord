@@ -43,6 +43,7 @@ class Channels extends React.Component {
     this.props.deleteServer(serverId)
   }
 
+
   render() {
     const { server } = this.props;
 
@@ -72,7 +73,7 @@ class Channels extends React.Component {
               </ul>
             </div>
             <div className="sidebar-delete-server-container" onClick={this.openEditModal}>
-              <div className="sidebar-delete-server">Edit Server</div>
+              <div className="sidebar-delete-server" >Edit Server</div>
               <img src="https://thiscord-assets.s3.amazonaws.com/icons8-settings-32.png" />
             </div>
           </div>

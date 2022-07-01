@@ -19,7 +19,11 @@ demoServer = Server.create!(admin_id: 1, server_name: "Circle Time")
 kinKaServer = Server.create!(admin_id: 2, server_name: "Kin Ka Attendance")
 ayceServer = Server.create!(admin_id: 3, server_name: "Ayce's Place")
 
-demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: 1)
+demoChannel1 = Channel.create!(channel_name: "Alan's Circle", server_id: 1)
+demoChannel2 = Channel.create!(channel_name: "Vivian's Circle", server_id: 1)
+demoChannel3 = Channel.create!(channel_name: "David's Circle", server_id: 1)
+demoChannel4 = Channel.create!(channel_name: "Michael's Circle", server_id: 1)
+demoChannel5 = Channel.create!(channel_name: "Spencer's Circle", server_id: 1)
 kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: 2)
 ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: 3)
 
