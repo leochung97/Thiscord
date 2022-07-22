@@ -40,6 +40,11 @@
   background-color: hsl(235, 85.6%, 64.7%);
   border-radius: 32.5%;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.servers-container > ul > div:hover {
+  cursor: pointer;
 }
 
 .servers-container > ul > li > a {

@@ -207,7 +207,8 @@ header {
 
 // Section
 section {
-  color: #23272a
+  color: #23272a;
+  background-color: white;
 }
 
 section > div:nth-child(-n+3) {
@@ -217,11 +218,11 @@ section > div:nth-child(-n+3) {
 }
 
 section > div:nth-child(even) {
-  background-color: #f6f6f6;
+  max-width: 1260px;
 }
 
 section > div:nth-child(odd) {
-  background-color: white;
+  max-width: 1260px;
 }
 
 section > div {
@@ -278,6 +279,11 @@ section > div > div > h3 {
   line-height: 1.625;
 }
 
+.splash-content-grid-1 {
+  background-color: white;
+  max-width: 1260px;
+}
+
 .splash-content-1 {
   grid-column: 9/span 4;
   order: 2;
@@ -310,8 +316,6 @@ section > div > div > h3 {
 .splash-content-image-4 {
   margin: 16px auto 0 auto;
   grid-column: span 12;
-  object-fit: cover;
-  width: 100%;
 }
 
 .splash-content-grid-5 {
