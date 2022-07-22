@@ -105,7 +105,7 @@ header {
 
 .splash-header-content > h1 {
   font-family: var(--font-headline);
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 900;
   line-height: 95%;
   margin-top: 100px;
@@ -148,7 +148,7 @@ header {
   border-radius: 28px;
   font-family: var(--font-primary);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   padding: 16px 32px;
   margin-top: 24px;
   white-space: nowrap;
@@ -176,6 +176,8 @@ header {
 }
 
 .splash-header-download-button {
+  display: flex;
+  align-items: center;
   margin-right: 12px;
   background-color: white;
   color: #23272a;
@@ -185,6 +187,10 @@ header {
   color: #7289da;
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-svg {
+  margin-right: 8px;
 }
 
 .splash-header-open-button {
@@ -344,17 +350,18 @@ section > div > div > h3 {
 }
 
 .splash-ready-button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-primary);
   font-weight: 500;
   font-size: 20px;
   color: white;
   background-color: #5865f2;
   margin: 40px auto 0 auto;
-  width: 188px;
+  width: 240px;
   border-radius: 28px;
   padding: 16px 32px;
-  line-height: 24px;
   transition-property: background-color;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
@@ -364,6 +371,11 @@ section > div > div > h3 {
   background-color: #7289da;
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.splash-ready-button > div {
+  display: flex;
+  align-items: center;
 }
 
 // Footer

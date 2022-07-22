@@ -44,4 +44,3 @@ export const logout = () => dispatch => (
     dispatch(logoutCurrentUser())
   ))
 );
-
