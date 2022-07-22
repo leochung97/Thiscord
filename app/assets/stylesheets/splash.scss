@@ -313,12 +313,10 @@ section > div > div > h3 {
   margin: 0 0 0 0;
   width: 100%;
   display: flex;
-  position: relative;
   height: 300px;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  flex-wrap: wrap;
   line-height: 1.15;
   text-align: center;
 }
@@ -346,22 +344,20 @@ section > div > div > h3 {
 }
 
 .splash-ready-button {
+  display: block;
   font-family: var(--font-primary);
   font-weight: 500;
   font-size: 20px;
   color: white;
   background-color: #5865f2;
   margin: 40px auto 0 auto;
-  width: auto;
+  width: 188px;
   border-radius: 28px;
   padding: 16px 32px;
   line-height: 24px;
   transition-property: background-color;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
-  position: absolute;
-  top: 60px;
-  left: 32.5%;
 }
 
 .splash-ready-button:hover {

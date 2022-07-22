@@ -15,10 +15,6 @@ export default class SessionForm extends React.Component {
     this.signupForm = this.signupForm.bind(this);
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   componentWillUnmount() {
     this.props.clearSessionErrors();
   }
