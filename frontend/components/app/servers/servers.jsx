@@ -1,41 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
 import { fetchServers, createServer, deleteServer } from "../../../actions/server_actions";
 import ServerModal from "./server_modal";
 
-class Servers extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { IsOpen: false };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+function Servers(props) {
+  const [isOpen, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(true);
   }
 
-  componentDidMount() {
-    this.props.fetchServers(this.props.currentUserId);
+  const closeModal = () => {
+    setModal(false);
   }
 
-  update(field) {
-    return (e) => {
-      this.setState({ [field]: e.target.value })
-    };
-  }
+  const history = useHistory();
+  
+  useEffect(() => {
+    props.fetchServers(props.currentUserId);
+  }, []);
 
-  openModal() {
-    this.setState({ IsOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ IsOpen: false });
-  }
-
-  render() {
-    const { servers } = this.props;
-
-    return (
-      <div className="overview-container">
+  return (
+    <div className="overview-container">
         <div className="servers-container">
           <ul>
             <li>
@@ -51,14 +39,14 @@ class Servers extends React.Component {
             <div className="servers-separator"></div>
             
             {
-              servers.map(server =>
-                <div className="servers-bubble">
+              props.servers.map(server =>
+                <div className="servers-bubble" onClick={() => history.push(`/channels/${server.id}`)}>
                   {server.server_name[0].toUpperCase()}
                 </div>
               )
             }
 
-            <li className="modal-add-list" onClick={this.openModal}>
+            <li className="modal-add-list" onClick={openModal}>
               <svg width="24" height="24" viewBox="0 0 24 24">
                 <path d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z"></path>
               </svg>
@@ -72,7 +60,7 @@ class Servers extends React.Component {
 
             <div className="servers-separator"></div>
 
-            <li className="servers-download-button" onClick={this.props.logout}>
+            <li className="servers-download-button" onClick={() => props.logout}>
               <svg aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 12.586V2H13V12.586L16.293 9.293ZM18 20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 20V18H6V20H18Z"></path>
               </svg>
@@ -81,14 +69,13 @@ class Servers extends React.Component {
           </ul>
           
           <ServerModal
-            isOpen={this.state.IsOpen}
-            closeModal={this.closeModal}
+            isOpen={isOpen}
+            closeModal={closeModal}
           />
 
         </div>
       </div>
-    )
-  }
+  )
 }
 
 const mSTP = state => ({
