@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
 import { fetchServers, createServer, deleteServer } from "../../../actions/server_actions";
+import { useCurrentUser } from "../../../util/selectors";
 import ServerModal from "./server_modal";
 
 function Servers(props) {
   const [isOpen, setModal] = useState(false);
+  const currentUser = useCurrentUser();
+  const history = useHistory();
+  const servers = useSelector(
+    state => state.entities.servers,
+    (a, b) => JSON.stringify(a) === JSON.stringify(b)
+  );
 
   const openModal = () => {
     setModal(true);
@@ -15,12 +22,10 @@ function Servers(props) {
   const closeModal = () => {
     setModal(false);
   }
-
-  const history = useHistory();
   
   useEffect(() => {
-    props.fetchServers(props.currentUserId);
-  }, []);
+    props.fetchServers(currentUser);
+  }, [servers]);
 
   return (
     <div className="overview-container">
@@ -36,10 +41,10 @@ function Servers(props) {
             </div>
           </li>
           
-          <div className="servers-separator" key="separator1"></div>
+          <div className="servers-separator" key="separator1" />
           
           {
-            props.servers.map(server =>
+            servers.map(server =>
               <div className="servers-bubble" onClick={() => history.push(`/channels/${server.id}`)} key={server.id}>
                 {server.server_name[0].toUpperCase()}
               </div>
@@ -58,7 +63,7 @@ function Servers(props) {
             </svg>
           </li>
 
-          <div className="servers-separator" key="separator2"></div>
+          <div className="servers-separator" key="separator2" />
 
           <li className="servers-download-button" onClick={() => props.logout} key="download">
             <svg aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
@@ -79,8 +84,6 @@ function Servers(props) {
 }
 
 const mSTP = state => ({
-  currentUserId: state.session.id,
-  servers: state.entities.servers,
 });
 
 const mDTP = dispatch => ({

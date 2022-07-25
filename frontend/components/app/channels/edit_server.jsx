@@ -5,15 +5,14 @@ import { updateServer, deleteServer } from "../../../actions/server_actions";
 
 function EditServer(props) {
   const [state, setState] = useState(props.server)
-  
   const history = useHistory();
-  
+
+
   const update = (field) => {
     return (e) => setState(() => ({ ...state, [field]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     props.updateServer(state)
       .then(() => {
         props.closeModal();
@@ -38,7 +37,7 @@ function EditServer(props) {
         <div className="modal-form-container">
           <h3>SERVER NAME</h3>
           <form className="modal-form">
-            <input className="create-server-input" type="text" onChange={update} value={state.server_name} placeholder={`Server Name`} />
+            <input className="create-server-input" type="text" onChange={update("server_name")} value={state.server_name} placeholder={`Server Name`} />
             <div className="modal-buttons-container">
               <button className="edit-server-delete" onClick={() => removeServer(props.server.id)}>Delete Server</button>
               <button className="create-server-exit" onClick={props.closeModal}>Close Menu</button>

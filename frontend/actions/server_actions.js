@@ -31,37 +31,38 @@ export const clearServerErrors = () => ({
 });
 
 export const fetchServer = serverId => dispatch => (
-  ServerAPIUtil.fetchServer(serverId).then(server => (
-    dispatch(receiveServer(server))
+  ServerAPIUtil.fetchServer(serverId)
+    .then(server => (dispatch(receiveServer(server))
   ), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ))
 );
 
 export const fetchServers = userId => dispatch => (
-  ServerAPIUtil.fetchServers(userId).then(servers => (
-    dispatch(receiveServers(servers))
+  ServerAPIUtil.fetchServers(userId)
+    .then(servers => (dispatch(receiveServers(servers))
   ), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ))
 );
 
 export const createServer = server => dispatch => (
-  ServerAPIUtil.createServer(server).then(server => (
-    dispatch(receiveServer(server))
+  ServerAPIUtil.createServer(server)
+    .then(server => (dispatch(receiveServer(server))
   ), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ))
 );
 
 export const updateServer = server => dispatch => (
-  ServerAPIUtil.updateServer(server).then(server => (
-    dispatch(receiveServer(server))
+  ServerAPIUtil.updateServer(server)
+    .then(server => (dispatch(receiveServer(server))
   ), err => (
     dispatch(receiveServerErrors(err.responseJSON))
   ))
 );
 
 export const deleteServer = serverId => dispatch => (
-  ServerAPIUtil.deleteServer(serverId).then(() => dispatch(removeServer(serverId)))
+  ServerAPIUtil.deleteServer(serverId)
+    .then(() => dispatch(removeServer(serverId)))
 );

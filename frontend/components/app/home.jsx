@@ -1,5 +1,4 @@
 import React from "react"
-import { connect } from "react-redux";
 import Friends from "./friends/friends";
 import SearchBar from "./search/search";
 import Messages from "./messages/messages";
@@ -21,8 +20,4 @@ function Home() {
   )
 }
 
-const mSTP = state => ({
-  currentUserId: state.session.id
-});
-
-export default connect(mSTP)(Home);
+export default (Home);

@@ -1,31 +1,32 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { connect, useSelector } from "react-redux";
 import { useHistory, withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { fetchChannel, fetchChannels, createChannel, deleteChannel } from "../../../actions/channel_actions";
-import { deleteServer } from "../../../actions/server_actions";
+import { fetchServer, deleteServer } from "../../../actions/server_actions";
 import ChannelModal from "./channel_modal";
 import ServerEditModal from "./server_edit_modal"
 
 function Channels(props) {
   const [isOpen, setOpen] = useState(false);
   const [isEditOpen, setEditOpen] = useState(false);
-  const history = useHistory();
 
+  const history = useHistory();
+1
   const openModal = () => {
     setOpen(true);
     setEditOpen(false);
-  }
+  };
 
   const openEdit = () => {
     setOpen(false);
     setEditOpen(true);
-  }
+  };
 
   const closeModal = () => {
     setOpen(false);
     setEditOpen(false);
-  }
+  };
 
   if (props.server) {
     return (
@@ -84,6 +85,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
+  fetchServer: serverId => dispatch(fetchServer(serverId)),
   fetchChannel: channelId => dispatch(fetchChannel(channelId)),
   fetchChannels: serverId => dispatch(fetchChannels(serverId)),
   createChannel: channel => dispatch(createChannel(channel)),
