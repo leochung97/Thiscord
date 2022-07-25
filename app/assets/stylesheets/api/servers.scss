@@ -33,7 +33,7 @@
   background-color: #36393f;
   transition: background-color .15s ease-out, color .15s ease-out, border-radius .15s ease-in-out;
   transition-property: background-color, border-radius;
-  color: #96989d;
+  color: #dcddde;
 }
 
 .servers-container > ul > li:hover {
@@ -48,7 +48,7 @@
 }
 
 .servers-container > ul > li > a {
-  color: #96989d;
+  color: #dcddde;
   display: flex;
   align-items: center;
   text-align: center;
@@ -99,7 +99,7 @@
   transition: background-color .15s ease-out, color .15s ease-out, border-radius .15s ease-in-out;
   transition-property: background-color, border-radius;
   text-decoration: none;
-  color: #96989d;
+  color: #dcddde;
   align-items: center;
 }
 

@@ -40,8 +40,8 @@ function Channels(props) {
             <ul>
               {
                 props.server.channels.map(channel =>
-                  <div>
-                    <li className="channels-list" key={channel.id}>
+                  <div key={channel.id}>
+                    <li className="channels-list">
                       <img src="https://thiscord-assets.s3.amazonaws.com/icons8-hashtag-large-48.png" />
                       <Link to={`/channels/${props.match.params.serverId}/${channel.id}`}>{channel.channel_name}</Link>
                       <img src="https://thiscord-assets.s3.amazonaws.com/icons8-add-user-group-man-man-24.png" />

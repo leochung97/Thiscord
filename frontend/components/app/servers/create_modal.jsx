@@ -1,56 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import { createServer } from "../../../actions/server_actions";
 
-class CreateServer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      server_name: ""
-    };
+function CreateServer(props) {
+  const [state, setState] = useState({ server_name: '' });
+  const history = useHistory();
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
+  const update = (e) => {
+    e.preventDefault();
+    setState({ server_name: e.target.value });
   }
 
-  update(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({ server_name: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.createServer({ server_name: this.state.server_name })
+    props.createServer(state)
       .then(({ server }) => {
-        this.props.closeModal();
-        this.props.history.push(`${server.id}`);
+        props.closeModal();
+        history.push(`/channels/${server.id}`)
       })
   }
 
-  render() {
-    return (
-      <div className="create-server-modal">
-        <div className="create-server-wrapper">
-          <div className="create-server-header-container">
-            <h1>Customize your server</h1>
-            <h3>Give your new server a personality with a name. You can always change it later.</h3>
-          </div>
-          <div className="modal-form-container">
-            <h3>SERVER NAME</h3>
-            <form onSubmit={this.handleSubmit} className="modal-form">
-              <input className="create-server-input" type="text" onChange={this.update} value={this.state.server_name} placeholder={`Server Name`} />
-              <div>By creating a server, you agree to Thiscord's <a href="">Community Guidelines.</a></div>
-              <div className="modal-buttons-container">
-                <button className="create-server-exit" onClick={this.props.closeModal}>Back</button>
-                <button className="create-server-create" type="submit">Create</button>
-              </div>
-            </form>
-          </div>
+  return (
+    <div className="create-server-modal">
+      <div className="create-server-wrapper">
+        <div className="create-server-header-container">
+          <h1>Customize your server</h1>
+          <h3>Give your new server a personality with a name. You can always change it later.</h3>
+        </div>
+        <div className="modal-form-container">
+          <h3>SERVER NAME</h3>
+          <form onSubmit={handleSubmit} className="modal-form">
+            <input className="create-server-input" type="text" onChange={update} value={state.server_name} placeholder={`Server Name`} />
+            <div>By creating a server, you agree to Thiscord's <a href="">Community Guidelines.</a></div>
+            <div className="modal-buttons-container">
+              <button className="create-server-exit" onClick={props.closeModal}>Back</button>
+              <button className="create-server-create" type="submit">Create</button>
+            </div>
+          </form>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 const mSTP = state => ({
