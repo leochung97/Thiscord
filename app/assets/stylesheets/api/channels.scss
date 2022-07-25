@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.channels {
+  margin-top: 16px;
+}
+
 .channels-wrapper {
   border-top: 1px solid #202225;
   border-bottom: 1px solid #202225;
@@ -9,13 +13,18 @@
 }
 
 .channels-drop-container {
-  width: 220px;
+  position: relative;
+  padding-right: 8px;
+  padding-left: 16px;
+  height: 24px;
   display: flex;
-  align-items: baseline;
+  font-weight: 600;
+  align-items: center;
   justify-content: space-between;
   vertical-align: middle;
   color: #96989d;
   background-color: transparent;
+  font-family: var(--font-display);
 }
 
 .channels-drop-container:hover {
@@ -23,22 +32,27 @@
   cursor: pointer;
 }
 
+.channels-chevron {
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+}
+
 .channels-drop {
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font-display);
+  margin-top: 2px;
+  margin-left: 4px;
+  display: block;
+  font-size: 14px;
+  width: 142px;
+  height: 20px;
 }
 
-.channels-create-button {
-  font-size: 18px;
-  font-weight: 600;
-  font-family: var(--font-display);
-  color: #96989d;
-  background-color: transparent;
-}
-
-.channels-create-button:hover {
-  color: #fff;
+.hashtag {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .channels-list {
@@ -48,6 +62,7 @@
   padding: 1px 0 1px 0;
   height: 32px;
   border-radius: 3px;
+  color: #96989d;
 }
 
 .channels-list:hover {
@@ -55,33 +70,25 @@
   cursor: pointer;
 }
 
-.channels-list > img:first-of-type {
-  width: 20px;
-  height: 20px;
-  filter: invert(62%) sepia(4%) saturate(342%) hue-rotate(185deg) brightness(98%) contrast(86%);
+.channels-list > svg {
+  display: block;
+  padding: 6px 2px;
 }
 
-.channels-list > img {
-  width: 12px;
-  height: 12px;
-  filter: invert(62%) sepia(4%) saturate(342%) hue-rotate(185deg) brightness(98%) contrast(86%);
-  margin-right: 3px;
-}
-
-.channels-list > img:hover {
-  filter: invert(97%) sepia(26%) saturate(46%) hue-rotate(294deg) brightness(119%) contrast(100%);
+.channels-list > svg:hover {
+  color: #fff;
 }
 
 .channels-list > a {
   display: flex;
   align-items: center;
   text-decoration: none;
-  width: 100%;
-  height: 100%;
+  width: 142px;
   color: #96989d;
   font-size: 14px;
   font-weight: 600;
   font-family: var(--font-display);
+  line-height: 20px;
   padding-left: 10px;
 }
 
