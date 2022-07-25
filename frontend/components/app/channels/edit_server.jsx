@@ -3,6 +3,22 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { updateServer, deleteServer } from "../../../actions/server_actions";
 
+// function EditServer(props) {
+//   const [state, setState] = useState(props.server)
+  
+//   const update = (field) => {
+//     return (e) => setState(() => ({ ...state, [field]: e.target.value }));
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     props.updateServer(state)
+//       .then(() => {
+//         props.closeModal();
+//       })
+//   }
+// }
+
 class EditServer extends React.Component {
   constructor(props) {
     super(props);

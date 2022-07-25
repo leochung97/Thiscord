@@ -59,7 +59,7 @@ function Channels(props) {
           </ul>
         </div>
         <div className="sidebar-delete-server-container" onClick={openEdit}>
-          <div className="sidebar-delete-server" >Edit Server</div>
+          <div className="sidebar-delete-server">Edit Server</div>
           <img src="https://thiscord-assets.s3.amazonaws.com/icons8-settings-32.png" />
         </div>
       </div>
