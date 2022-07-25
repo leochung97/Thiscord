@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { connect, useSelector } from "react-redux";
 import { withRouter, useHistory } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
 import { updateServer, deleteServer } from "../../../actions/server_actions";
 
 function EditServer(props) {
