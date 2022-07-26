@@ -78,7 +78,7 @@ function Splash(props) {
           <div className="splash-content-ready-container">
             <img src="https://thiscord-assets.s3.amazonaws.com/splash_sparkles.svg" className="splash-content-ready-sparkles" alt="" />
             <h1>Ready to start your journey?</h1>
-            <Link to="/login" className="splash-ready-button">
+            <Link to="/channels/@me" className="splash-ready-button">
               {props.loggedIn ? 
                 <div>Open Thiscord</div> 
                 :

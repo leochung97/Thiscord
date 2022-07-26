@@ -217,14 +217,6 @@ section > div:nth-child(-n+3) {
   justify-content: center;
 }
 
-section > div:nth-child(even) {
-  max-width: 1260px;
-}
-
-section > div:nth-child(odd) {
-  max-width: 1260px;
-}
-
 section > div {
   padding: 120px 40px 120px 40px;
   margin: 0 auto 0 auto;
@@ -284,6 +276,18 @@ section > div > div > h3 {
   max-width: 1260px;
 }
 
+.splash-content-grid-2 {
+  max-width: 1260px;
+}
+
+.splash-content-grid-3 {
+  max-width: 1260px;
+}
+
+.splash-content-grid-3 {
+  max-width: 1260px;
+}
+
 .splash-content-1 {
   grid-column: 9/span 4;
   order: 2;
@@ -322,6 +326,7 @@ section > div > div > h3 {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   width: 100%;
+  max-width: 100%;
   display: flex;
   height: 300px;
   align-items: center;
