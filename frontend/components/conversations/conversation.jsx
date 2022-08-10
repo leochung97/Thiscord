@@ -20,8 +20,8 @@ function Conversation(props) {
   useEffect(() => {
     props.fetchConversation(props.conversation.id);
 
-    const cable = createConsumer("ws://localhost:3000/cable");
-    // const cable = createConsumer('')
+    // const cable = createConsumer("ws://localhost:3000/cable");
+    const cable = createConsumer('ws://thiscord.herokuapp.com')
     const paramsToSend = {
       channel: "ConversationChannel",
       id: props.conversation.id,
