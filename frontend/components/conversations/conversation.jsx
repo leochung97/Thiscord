@@ -3,7 +3,7 @@ import CreateDirectMessage from "./create_direct_message";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { createConsumer } from "@rails/actioncable";
-import ConversationMessages from "./Conversation_Messages";
+import ConversationMessages from "./conversation_messages";
 import { connect } from "react-redux";
 import {
   fetchConversations,

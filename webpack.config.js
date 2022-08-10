@@ -1,4 +1,5 @@
 const path = require('path');
+var CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 
 module.exports = {
   context: __dirname,
@@ -24,5 +25,8 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
-  }
+  },
+  plugins: [
+    new CaseSensitivePathsPlugin()
+  ]
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import ServerNavItems from "./Server_Nav_Items";
+import ServerNavItems from "./server_nav_items";
 
 const ServerNavList = (props) => {
   if (!props.servers) {
     return null;
   }
-  
+
   return (
     <ul className="server-nav-server-list">
       {props.servers.map((server, idx) => {
