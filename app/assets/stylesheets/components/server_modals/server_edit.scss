@@ -1,0 +1,129 @@
+.server-options {
+  display: flex;
+  z-index: 1;
+  background-color: #36393f;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+}
+
+.edit-sidebar-content {
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  color: #b9bbbe;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.edit-server-sidebar-container {
+  width: 312px;
+  box-sizing: border-box;
+  background-color: #2f3136;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.edit-server-sidebar {
+  padding: 60px 6px 60px 20px;
+  width: 218px;
+  box-sizing: border-box;
+}
+
+.edit-server-sidebar-header {
+  display: flex;
+  padding: 0 10px 6px 10px;
+  background-color: transparent;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+    "Lucida Grande", sans-serif;
+  font-weight: 700;
+  line-height: 16px;
+  color: #96989d;
+}
+
+.edit-server-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-server-delete:hover {
+  cursor: pointer;
+  background-color: rgba(247, 50, 50, 0.6);
+  color: white;
+}
+
+.edit-server-main {
+  padding: 60px 40px 80px;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.edit-server-overview {
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.edit-server-main-content {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.edit-server-server-initial {
+  margin-right: 10px;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  background-size: 100% 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #5865f2;
+  font-size: 38px;
+}
+
+.edit-server-form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+}
+
+.edit-server-form > label {
+  color: #b9bbbe;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.edit-server-form > input {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 3px;
+  color: #dcddde;
+  background-color: #202225;
+  font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+  outline: 0;
+  border: 0;
+}

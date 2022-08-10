@@ -1,0 +1,60 @@
+.user-options-shell {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  margin-bottom: 1px;
+  background-color: #292b2f;
+  width: 240px;
+  box-sizing: border-box;
+}
+
+.user-info-shell {
+  display: flex;
+
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+}
+
+.user-icon-shell {
+  display: flex;
+}
+
+.user-handle {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+}
+
+.user-username {
+  color: white;
+  line-height: 18px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-tag {
+  color: #b9bbbe;
+  line-height: 13px;
+  font-size: 12px;
+}
+
+.user-options-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #b9bbbe;
+}
+
+.user-options-icon:hover {
+  color: #dcddde;
+  background-color: rgba(79, 84, 92, 0.32);
+}

@@ -1,0 +1,82 @@
+.server-button-shell {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 6, 7, 0.08);
+  margin-bottom: 8px;
+
+  transition: background-color 0.17s ease;
+
+  img {
+    margin-left: auto;
+    margin-right: 16px;
+  }
+}
+
+.server-button-shell:hover {
+  background-color: rgba(116, 127, 141, 0.08);
+}
+
+.server-button-shell:active {
+  background-color: rgba(116, 127, 141, 0.16);
+}
+
+.server-button-imagetext {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    margin: 8px 8px 8px 16px;
+  }
+
+  div {
+    font-size: 16px;
+    line-height: 20px;
+    color: #2e3338;
+    font-weight: 700;
+  }
+
+  .server-modal-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 8px 16px 8px 16px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+    overflow: hidden;
+
+    background-color: #36393f;
+    color: #dcddde;
+  }
+}
+
+.server-modal-back-button {
+  cursor: pointer;
+  height: 38px;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  vertical-align: middle;
+  line-height: 38px;
+}
+
+.server-modal-link-text {
+  cursor: pointer;
+  text-decoration: none;
+  color: #0068e0;
+}
+
+.server-modal-link-text:hover {
+  text-decoration: underline;
+}

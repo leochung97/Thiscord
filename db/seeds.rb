@@ -1,37 +1,85 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-User.destroy_all
-Server.destroy_all
-Channel.destroy_all
+ActiveRecord::Base.transaction do 
+  # Users Creation
+  users = []
+  User.destroy_all 
+  users << User.create!(email: 'demouser@thiscord.com', user_url: "https://i.imgur.com/OMcZAaz.png", username: 'Demo User', password: 'demopass', description: 'Demo Account', status: 'online')
+  (1...10).each do |i|
+    users << User.create!(email: 'fakeuser' + i.to_s + '@thiscord.com', user_url: "https://i.imgur.com/Jcptpog.png", username: Faker::Name.unique.name, password: 'password', description: 'Generated Account', status: 'online')
+  end
 
-demouser = User.create!(username: "demouser", email: "demo@demo.com", password: "demopass")
-kinKa = User.create!(username: "kinkaforta", email: "kinka@kinka.com", password: "kinkapass")
-ayce = User.create!(username: "ayceforta", email: "ayce@ayy.com", password: "aycepass")
-spencer = User.create!(username: "spencerforta", email: "dispencer@spencer.com", password: "spencerpass")
+  # Servers Creation
+  Server.destroy_all
+  server1 = Server.create!(owner_id: users[0].id, name: 'Demo Server', is_public: true)
+  server2 = Server.create!(owner_id: users.sample().id, name: 'Kin Ka Circle', is_public: true)
+  server3 = Server.create!(owner_id: users.sample().id, name: 'Ayce Circle', is_public: true)
+  server4 = Server.create!(owner_id: users.sample().id, name: 'Spencer Circle', is_public: true)
+  server5 = Server.create!(owner_id: users.sample().id, name: 'LineAlert', is_public: true)
 
-demoServer = Server.create!(admin_id: 1, server_name: "Circle Time")
-kinKaServer = Server.create!(admin_id: 2, server_name: "Kin Ka Attendance")
-ayceServer = Server.create!(admin_id: 3, server_name: "Ayce's Place")
+  servers = [server1, server2, server3, server4, server5]
 
-demoChannel1 = Channel.create!(channel_name: "Alan's Circle", server_id: 1)
-demoChannel2 = Channel.create!(channel_name: "Vivian's Circle", server_id: 1)
-demoChannel3 = Channel.create!(channel_name: "David's Circle", server_id: 1)
-demoChannel4 = Channel.create!(channel_name: "Michael's Circle", server_id: 1)
-demoChannel5 = Channel.create!(channel_name: "Spencer's Circle", server_id: 1)
-kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: 2)
-ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: 3)
+  # Server Memberships Creation
+  ServerMembership.destroy_all
+  memberships = Hash.new { |h, k| h[k] = [] }
+  
+  servers.drop(1).sample(2).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
+  servers.each do |server|
+    memberships[server.id] = []
+    members = users.drop(1).sample(5)
+    members.each do |member|
+      if (member.id != server.owner_id)
+        memberships[server.id] << ServerMembership.create!(user_id: member.id, server_id: server.id)
+      end
+    end
 
-demouser.servers << demoServer
-demouser.servers << kinKaServer
-demouser.servers << ayceServer
-kinKa.servers << kinKaServer
-kinKa.servers << demoServer
-ayce.servers << ayceServer
-ayce.servers << demoServer
-spencer.servers << demoServer
+    memberships[server.id] << ServerMembership.create!(user_id: server.owner_id, server_id: server.id)
+  end
+
+  # Channels Creation
+  Channel.destroy_all
+  channels = []
+  servers.each do |server|
+    channels << Channel.create!(server_id: server.id, name: 'general')
+    (0...3).each do |i|
+      channels << Channel.create!(server_id: server.id, name: Faker::Game.title)
+    end
+  end
+
+  # Messages Creation
+  Message.destroy_all
+  channels.each do |channel|
+    (0...3).each do |i|
+      Message.create!(creator_id: memberships[channel.server_id].sample().user_id, channel_id: channel.id, content: "I love " + Faker::Hobby.activity)
+    end
+  end
+
+  # Friendships Creation
+  Friendship.destroy_all
+  friendships = []
+  users.each do |user|
+    friends = users.sample(5)
+    friends.each do |friend|
+      if (friend != user) && !Friendship.exists?(user_id: user.id, friend_id: friend.id) 
+        friendships << Friendship.create!(user_id: user.id, friend_id: friend.id, status: 'resolved')
+        Friendship.create!(user_id: friend.id, friend_id: user.id, status: 'resolved')
+      end
+    end
+  end
+
+  # Refresh conversations and messages
+  Conversation.destroy_all 
+  ConversationParticipant.destroy_all
+  DirectMessage.destroy_all
+
+  friendships.each do |friendship|
+    new_conversation = Conversation.create!(owner_id: friendship.user_id)
+    ConversationParticipant.create(participant_id: friendship.user_id, conversation_id: new_conversation.id)
+    ConversationParticipant.create(participant_id: friendship.friend_id, conversation_id: new_conversation.id)
+
+  (0...10).each do |i|
+      DirectMessage.create!(creator_id: [friendship.user_id, friendship.friend_id].sample(), conversation_id: new_conversation.id, content: Faker::Movie.quote)
+    end
+  end
+  
+end

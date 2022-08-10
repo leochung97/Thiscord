@@ -1,0 +1,52 @@
+.modal-light-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+
+  width: 440px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.server-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px 0;
+
+  div {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4f5660;
+  }
+
+  h3 {
+    font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+      "Lucida Grande", sans-serif;
+    font-weight: 700;
+    color: #060607;
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.server-initial-modal {
+  margin: 8px 16px 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background-color: #36393f;
+  color: #dcddde;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2em;
+  overflow: hidden;
+}

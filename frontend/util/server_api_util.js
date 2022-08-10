@@ -1,37 +1,43 @@
-// Fetches the server
-export const fetchServer = serverId => (
-  $.ajax({
-    url: `/api/servers/${serverId}`
-  })
-);
+export const fetchServers = () => {
+  return $.ajax({
+    method: "GET",
+    url: `api/servers`,
+  });
+};
 
-// Fetches the user's joined servers
-export const fetchServers = userId => (
-  $.ajax({
-    url: "/api/servers",
-    data: { userId }
-  })
-);
+export const fetchServer = (serverId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/servers/${serverId}`,
+  });
+};
 
-export const createServer = server => (
-  $.ajax({
+export const createServer = (server) => {
+  return $.ajax({
     method: "POST",
-    url: "api/servers",
-    data: { server }
-  })
-);
+    url: `api/servers/`,
+    data: { server: server },
+  });
+};
 
-export const updateServer = server => (
-  $.ajax({
+export const editServer = (server) => {
+  return $.ajax({
     method: "PATCH",
     url: `api/servers/${server.id}`,
-    data: { server }
-  })
-);
+    data: { server: server },
+  });
+};
 
-export const deleteServer = serverId => (
-  $.ajax({
+export const deleteServer = (serverId) => {
+  return $.ajax({
     method: "DELETE",
-    url: `api/servers/${serverId}`
-  })
-);
+    url: `api/servers/${serverId}`,
+  });
+};
+
+export const serverInitial = (server) => {
+  let serverInitial = "";
+  const words = server.name.split(" ");
+  words.map((word) => (serverInitial += word[0]));
+  return serverInitial;
+};

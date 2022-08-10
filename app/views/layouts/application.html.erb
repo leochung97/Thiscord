@@ -6,8 +6,18 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    
+    <script type="text/javascript">
+      window.private_server = "<%= image_url('private_server.png') %>";
+      window.public_server = "<%= image_url('public_server.png') %>";
+      window.server_create = "<%= image_url('server_create.png') %>";
+      window.server_modal_arrow = "<%= image_url('server_modal_arrow.png') %>";
+      window.default = "<%= image_url('default.png') %>";
+    </script>
+
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('favicon.png') %>
+    
+    <%= favicon_link_tag 'favicon.png' %>
   </head>
 
   <body>

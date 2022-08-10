@@ -1,7 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
+import sessionErrorsReducer from "./sessions/session_errors_reducer";
+import serverErrorsReducer from "./servers/server_errors_reducer";
+import channelErrorsReducer from "./channels/channel_errors_reducer";
 
-import session from './session_errors_reducer';
-
-export default combineReducers({
-  session
+const errorsReducer = combineReducers({
+  session: sessionErrorsReducer,
+  server: serverErrorsReducer,
+  channel: channelErrorsReducer,
 });
+
+export default errorsReducer;

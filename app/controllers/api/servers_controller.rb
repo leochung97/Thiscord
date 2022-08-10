@@ -1,29 +1,24 @@
 class Api::ServersController < ApplicationController
-  before_action :require_logged_in
+  skip_before_action :verify_authenticity_token
 
   def index
-    @servers = current_user.servers
+    @servers = Server.all
     render :index
   end
 
   def show
-    @server = current_user.servers.find(params[:id])
-
-    if @server
-      render :show
-    else
-      render json: ["You're not a part of this server!"], status: 404
-    end
+    @server = Server.find(params[:id])
+    render :show
   end
 
   def create
     @server = Server.new(server_params)
-    @server.admin = current_user
-
-    if @server.save
-      add_self_as_member
-      render :show
-    else
+    @server.owner_id = current_user.id
+    if @server.save 
+      @server_memberships = ServerMembership.create(user_id: current_user.id, server_id: @server.id)
+      @channel = Channel.create(name: 'General Discussion', server_id: @server.id)
+      render :show 
+    else 
       render json: @server.errors.full_messages, status: 422
     end
   end
@@ -31,25 +26,24 @@ class Api::ServersController < ApplicationController
   def update
     @server = Server.find(params[:id])
     if @server.update(server_params)
-      render :show
-    else
+      render :show 
+    else  
       render json: @server.errors.full_messages, status: 422
     end
   end
 
   def destroy
     @server = Server.find(params[:id])
-    @server.destroy;
+    if current_user.id == @server.owner_id 
+      @server.destroy 
+      render :show 
+    else  
+      render json: ['Only the owner of the server can delete it'], status: 422
+    end
   end
 
   private
-
   def server_params
-    params.require(:server).permit(:server_name)
-  end
-
-  def add_self_as_member
-    current_user.servers << @server
-    current_user.save!
+    params.require(:server).permit(:name, :is_public)
   end
 end

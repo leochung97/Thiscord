@@ -1,0 +1,19 @@
+.server-user-dm {
+  align-items: center;
+  position: absolute;
+  background-color: #36393f;
+  box-shadow: 0 0 0 1px rgba(4, 4, 5, 0.15);
+  box-sizing: border-box;
+  height: 24px;
+  border-radius: 4px;
+  padding: 10px 12px;
+  border-radius: 20px;
+  bottom: 32px;
+  transition: background-color, color 0.1s ease-out, background-color,
+    color 0.1s ease-out;
+}
+
+.server-user-dm:hover {
+  color: white;
+  filter: brightness(1.1);
+}

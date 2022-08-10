@@ -1,0 +1,250 @@
+.user-options {
+  display: flex;
+  z-index: 1;
+  background-color: #36393f;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+}
+
+.user-settings-shell {
+  width: 312px;
+  padding: 60px 6px 60px 20px;
+  box-sizing: border-box;
+  background-color: #2f3136;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  h3 {
+    width: 170px;
+    height: 20px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+      "Lucida Grande", sans-serif;
+    line-height: 16px;
+    color: #96989d;
+  }
+}
+
+#my-account,
+.logout-button {
+  width: 192px;
+  height: 32px;
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  color: #b9bbbe;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+#my-account {
+  text-align: left;
+  line-height: 10px;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background-color: rgba(79, 84, 92, 0.4);
+}
+
+.account-settings-shell {
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding: 60px 40px 80px;
+  max-width: 740px;
+  min-width: 460px;
+  min-height: 100%;
+  h3 {
+    box-sizing: border-box;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+      "Lucida Grande", sans-serif;
+  }
+}
+
+.account-settings-box {
+  width: 660px;
+  height: 400px;
+  background-color: #202225;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.banner-user {
+  width: 100%;
+  height: 100px;
+  background-color: #5865f2;
+  border-radius: 8px 8px 0 0;
+}
+
+.user-settings-nameemail {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  padding: 16px 16px 0 120px;
+  box-sizing: border-box;
+}
+
+.settings-profile {
+  height: 80px;
+  width: 80px;
+  border: 7px solid #202225;
+  background-color: #202225;
+  position: absolute;
+  top: 76px;
+  left: 16px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.user-settings-handle {
+  color: #b9bbbe;
+  font-size: 20px;
+  font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+    "Lucida Grande", sans-serif;
+  line-height: 24px;
+  font-weight: 600;
+  span:first-child {
+    color: white;
+  }
+}
+
+.user-options-edit-shell {
+  border-radius: 8px;
+  background-color: #2f3136;
+  padding: 16px;
+  margin: 8px 16px 16px;
+  box-sizing: border-box;
+}
+
+.edit-user-shell {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.edit-username {
+  margin-bottom: 20px;
+}
+
+.edit-user-info {
+  margin-right: 16px;
+
+  h3 {
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    color: #b9bbbe;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-family: "ginto-normal", "Whitney", "Helvetica Neue", Helvetica, Arial,
+      "Lucida Grande", sans-serif;
+  }
+  span {
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.edit-user-button {
+  cursor: pointer;
+  color: white;
+  background-color: #4f545c;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+}
+
+.edit-user-button:hover {
+  background-color: #686d73;
+}
+
+.edit-user-form > input {
+  background-color: #40444b;
+  max-height: 50vh;
+  border-radius: 8px;
+  padding: 11px 10px 11px 16px;
+  caret-color: #dcddde;
+  text-align: left;
+  word-break: break-word;
+  font-size: 16px;
+  line-height: 1.375rem;
+  color: #dcddde;
+  font-weight: 400;
+  outline: none;
+  border: none;
+}
+
+.close-button-circle {
+  cursor: pointer;
+  position: fixed;
+  left: 91%;
+  top: 5%;
+  color: #b9bbbe;
+  line-height: 16px;
+  transition: color 0.17s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-button-circle:hover {
+  color: #dcddde;
+}
+
+.close-button-svg-container {
+  border: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#esc {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+}
+
+.demo-edit-warning {
+  position: relative;
+  left: 30%;
+  color: brown;
+}
