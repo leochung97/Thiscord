@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import configureStore from "./store/store";
+import configureStore from "../frontend/store/store";
 import Root from "../frontend/components/Root";
 
 document.addEventListener("DOMContentLoaded", () => {
