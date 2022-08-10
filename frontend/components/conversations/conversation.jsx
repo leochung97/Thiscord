@@ -21,7 +21,7 @@ function Conversation(props) {
     props.fetchConversation(props.conversation.id);
 
     // const cable = createConsumer("ws://localhost:3000/cable");
-    const cable = createConsumer('wss://thiscord-leo.herokuapp.com')
+    const cable = createConsumer("wss://thiscord-leo.herokuapp.com");
     const paramsToSend = {
       channel: "ConversationChannel",
       id: props.conversation.id,
@@ -33,11 +33,11 @@ function Conversation(props) {
       },
 
       connected() {
-        console.log("connected");
+        // console.log("connected");
       },
 
       disconnected() {
-        console.log("disconnected");
+        // console.log("disconnected");
       },
     };
 
