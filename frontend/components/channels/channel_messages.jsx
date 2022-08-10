@@ -41,7 +41,6 @@ const ChannelMessages = (props) => {
     const subscription = cable.subscriptions.create(paramsToSend, handlers);
 
     return function cleanup() {
-      console.log("unsubbing from ", params.channelId);
       subscription.unsubscribe();
     };
   }, [props.channel.id, messages]);
