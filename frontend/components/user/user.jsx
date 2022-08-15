@@ -72,7 +72,7 @@ class User extends React.Component {
             </svg>
           </div>
           <ReactTooltip
-            id="user-options"
+            id="user-settings"
             place="top"
             type="dark"
             effect="solid"

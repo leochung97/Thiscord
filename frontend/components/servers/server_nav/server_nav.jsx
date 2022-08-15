@@ -45,6 +45,8 @@ class ServerNav extends React.Component {
       <div className="server-navigation-container">
         <div className="server-navigation-bar-container">
           <div
+            data-tip
+            data-for="tt-home"
             className="server-navigation-button server-navigation-icon-button"
             title="Home"
             onClick={() => {
@@ -58,6 +60,15 @@ class ServerNav extends React.Component {
               ></path>
             </svg>
           </div>
+          <ReactTooltip
+            id="tt-home"
+            place="right"
+            type="dark"
+            effect="solid"
+            backgroundColor="#202225"
+          >
+            <span>Home</span>
+          </ReactTooltip>
 
           <div className="line-gap"></div>
 
