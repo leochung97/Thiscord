@@ -17,7 +17,7 @@ const ChannelMessages = (props) => {
   useEffect(() => {
     props.fetchChannel(props.channel.id);
     // const cable = createConsumer("ws://localhost:3000/cable");
-    const cable = createConsumer("wss://thiscord-leo.herokuapp.com");
+    const cable = createConsumer("wss://thiscord-leo.herokuapp.com/cable");
 
     const paramsToSend = {
       channel: "ChannelChannel",
