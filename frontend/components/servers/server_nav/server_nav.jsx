@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import ServerNavList from "./server_nav_list";
 import { matchPath } from "react-router-dom";
 import { connect } from "react-redux";
@@ -45,6 +46,7 @@ class ServerNav extends React.Component {
         <div className="server-navigation-bar-container">
           <div
             className="server-navigation-button server-navigation-icon-button"
+            title="Home"
             onClick={() => {
               this.props.history.push("/channels/@me");
             }}
@@ -62,6 +64,8 @@ class ServerNav extends React.Component {
           {ServerNavList(this.props)}
 
           <div
+            data-tip
+            data-for="tt-addserver"
             className="server-navigation-button server-extra-button"
             onClick={() => this.props.openModal("formServer")}
           >
@@ -72,8 +76,19 @@ class ServerNav extends React.Component {
               ></path>
             </svg>
           </div>
+          <ReactTooltip
+            id="tt-addserver"
+            place="right"
+            type="dark"
+            effect="solid"
+            backgroundColor="#202225"
+          >
+            <span>Add a Server</span>
+          </ReactTooltip>
 
           <div
+            data-tip
+            data-for="tt-discoverserver"
             className="server-navigation-button server-extra-button"
             onClick={() => this.props.openModal("indexServer")}
           >
@@ -84,10 +99,23 @@ class ServerNav extends React.Component {
               ></path>
             </svg>
           </div>
+          <ReactTooltip
+            id="tt-discoverserver"
+            place="right"
+            type="dark"
+            effect="solid"
+            backgroundColor="#202225"
+          >
+            <span>Discover Servers</span>
+          </ReactTooltip>
 
           <div className="line-gap"></div>
 
-          <div className="server-navigation-button server-extra-button">
+          <div
+            data-tip
+            data-for="tt-download"
+            className="server-navigation-button server-extra-button"
+          >
             <svg aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
@@ -97,6 +125,15 @@ class ServerNav extends React.Component {
               ></path>
             </svg>
           </div>
+          <ReactTooltip
+            id="tt-download"
+            place="right"
+            type="dark"
+            effect="solid"
+            backgroundColor="#202225"
+          >
+            <span>Download Functionality not added yet!</span>
+          </ReactTooltip>
         </div>
       </div>
     );

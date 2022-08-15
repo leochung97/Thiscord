@@ -3,14 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 100%;
   border-radius: 8px;
   border: 1px solid rgba(6, 6, 7, 0.08);
   margin-bottom: 8px;
-
   transition: background-color 0.17s ease;
-
   img {
     margin-left: auto;
     margin-right: 16px;
@@ -79,4 +76,20 @@
 
 .server-modal-link-text:hover {
   text-decoration: underline;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: -5px;
+  left: 105%;
+}
+
+.server-button-shell:hover .tooltiptext {
+  visibility: visible;
 }

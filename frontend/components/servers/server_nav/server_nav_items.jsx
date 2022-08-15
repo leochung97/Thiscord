@@ -6,7 +6,7 @@ const ServerNavItems = (props) => {
     return null;
   }
   const defaultChannelId = Object.keys(props.server.channels)[0];
-  
+
   const handleClick = () => {
     props.fetchServer(props.server.id);
     props.history.push(`/channels/${props.server.id}/${defaultChannelId}`);
