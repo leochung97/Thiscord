@@ -37,8 +37,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
   return {
-    createDirectMeateDirectMessageessage: (id, message) =>
-      dispatch(cr(id, message)),
+    createDirectMessage: (id, message) =>
+      dispatch(createDirectMessage(id, message)),
   };
 };
 

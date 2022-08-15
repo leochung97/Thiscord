@@ -143,7 +143,7 @@ class ServerNav extends React.Component {
             effect="solid"
             backgroundColor="#202225"
           >
-            <span>Download App to be updated!</span>
+            <span>Download Button to be updated!</span>
           </ReactTooltip>
         </div>
       </div>
