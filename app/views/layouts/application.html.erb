@@ -4,7 +4,7 @@
     <title>Thiscord | Your Place to Talk and Hang Out</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     
     <script type="text/javascript">
@@ -16,7 +16,6 @@
     </script>
 
     <%= javascript_include_tag 'application' %>
-    
     <%= favicon_link_tag 'favicon.png' %>
   </head>
 
