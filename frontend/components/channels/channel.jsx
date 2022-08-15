@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import ChannelMessages from "./channel_messages";
 import { connect } from "react-redux";
 import { createConversationParticipation } from "../../actions/conversation_participant_actions";
@@ -117,7 +118,7 @@ class Channel extends React.Component {
           <div className="channel-name">{this.props.channel.name}</div>
           <div className="space"></div>
 
-          <div className="channel-icons">
+          <div data-tip data-for="tt-icons" className="channel-icons">
             <svg
               x="0"
               y="0"
@@ -245,6 +246,15 @@ class Channel extends React.Component {
             </svg>
           </div>
         </div>
+        <ReactTooltip
+          id="tt-icons"
+          place="bottom"
+          type="dark"
+          effect="solid"
+          backgroundColor="#202225"
+        >
+          <span>Icons to be updated!</span>
+        </ReactTooltip>
 
         <div className="channel-content-shell">
           <ChannelMessages channel={this.props.channel} />
