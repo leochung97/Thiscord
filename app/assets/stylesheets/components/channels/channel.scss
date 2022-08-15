@@ -149,3 +149,13 @@
   color: white;
   filter: brightness(1.1);
 }
+
+.about-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    color: #ffffff;
+  }
+}
