@@ -127,10 +127,9 @@ class ServerNav extends React.Component {
             data-for="tt-download"
             href="https://github.com/leochung97"
             className="server-navigation-button server-extra-button"
+            target="_blank"
           >
             <svg
-              data-tip="true"
-              data-for="tt-icons"
               x="0"
               y="0"
               aria-hidden="false"

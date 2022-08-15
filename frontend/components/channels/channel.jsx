@@ -229,6 +229,8 @@ class Channel extends React.Component {
             </div>
 
             <svg
+              data-tip
+              data-for="tt-icons"
               x="0"
               y="0"
               aria-hidden="false"
@@ -249,6 +251,7 @@ class Channel extends React.Component {
             href="https://github.com/leochung97/Thiscord"
             data-tip
             data-for="tt-about"
+            target="_blank"
           >
             <svg
               x="0"

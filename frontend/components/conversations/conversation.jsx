@@ -183,6 +183,7 @@ function Conversation(props) {
               href="https://github.com/leochung97/Thiscord"
               data-tip
               data-for="tt-about"
+              target="_blank"
             >
               <svg
                 x="0"
