@@ -16,8 +16,13 @@ ActiveRecord::Base.transaction do
   server3 = Server.create!(owner_id: users.sample().id, name: 'Ayce Circle', is_public: true)
   server4 = Server.create!(owner_id: users.sample().id, name: 'Spencer Circle', is_public: true)
   server5 = Server.create!(owner_id: users.sample().id, name: 'LineAlert', is_public: true)
-
-  servers = [server1, server2, server3, server4, server5]
+  server6 = Server.create!(owner_id: users.sample().id, name: 'The Boys', is_public: true)
+  server7 = Server.create!(owner_id: users.sample().id, name: 'Game of Thrones', is_public: true)
+  server8 = Server.create!(owner_id: users.sample().id, name: 'WestWorld', is_public: true)
+  server9 = Server.create!(owner_id: users.sample().id, name: 'Typer Drive', is_public: true)
+  server10 = Server.create!(owner_id: users.sample().id, name: 'Hire me!', is_public: true)
+  
+  servers = [server1, server2, server3, server4, server5, server6, server7, server8, server9, server10]
 
   # Server Memberships Creation
   ServerMembership.destroy_all
