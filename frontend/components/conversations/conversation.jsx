@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import CreateDirectMessage from "./create_direct_message";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -72,7 +73,11 @@ function Conversation(props) {
 
           <div className="space"></div>
 
-          <div className="conversation-header-icons">
+          <div
+            data-tip
+            data-for="tt-conversation-icons"
+            className="conversation-header-icons"
+          >
             <svg
               x="0"
               y="0"
@@ -177,6 +182,15 @@ function Conversation(props) {
               ></path>
             </svg>
           </div>
+          <ReactTooltip
+            id="tt-conversation-icons"
+            place="bottom"
+            type="dark"
+            effect="solid"
+            backgroundColor="#202225"
+          >
+            <span>Icons to be updated!</span>
+          </ReactTooltip>
         </header>
         <div className="channel-messages-shell conversation-messages-shell">
           <ConversationMessages
