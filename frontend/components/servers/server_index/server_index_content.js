@@ -18,7 +18,7 @@ const ServerIndexContent = (props) => {
     );
   } else {
     return (
-      <div className="no-server-text">No more public servers to join!</div>
+      <div className="no-server-text">No available public servers to join!</div>
     );
   }
 };
