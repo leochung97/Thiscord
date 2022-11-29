@@ -1,7 +1,7 @@
 databases:
   - name: thiscord
-    databaseName: thiscord
-    user: thiscord
+    databaseName: leothiscord
+    user: leothiscord
 
 services:
   - type: web
