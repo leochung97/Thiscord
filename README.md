@@ -44,7 +44,7 @@ The name is intended to be a reference to JavaScript's **[this](https://develope
 **Other:**
 - **Amazon AWS S3**: Used for image hosting
 - **Babel**: Used for code transpilation
-- **Hosting**: Heroku
+- **Hosting**: Render
 - **Rails Action Cable**: Rails WebSocket integration 
 - **WebSocket**: Computer communications protocol
 
