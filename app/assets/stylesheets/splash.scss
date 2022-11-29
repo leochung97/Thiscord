@@ -11,6 +11,11 @@ a, abbr, acronym, address, applet, big, blockquote, body, button, caption, cite,
   vertical-align: baseline;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 a:link {
   text-decoration: none;
 }
