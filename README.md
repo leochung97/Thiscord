@@ -1,7 +1,5 @@
 # Thiscord
 
-**[Live Thiscord Demo](https://thiscord.onrender.com/#/)**
-
 ## Table of Contents
 
 - **[Background](#Background)**<br>
